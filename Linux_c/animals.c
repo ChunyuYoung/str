@@ -32,7 +32,7 @@ int main(void)
 				case 'f':
 					printf("渔夫，棕色貂");
 					break;
-				default:
+				default:/*当case执行完时会跳到这里并且结束switch语句，如果没有这个‘default’则将继续执行switch语句*/
 					printf("这有点");/*switch语句结束*/		
 			}
 		else
