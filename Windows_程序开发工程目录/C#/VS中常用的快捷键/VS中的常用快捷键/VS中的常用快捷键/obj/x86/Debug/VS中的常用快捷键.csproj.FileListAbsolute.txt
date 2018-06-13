@@ -1,0 +1,6 @@
+F:\work\Project\C#\VS中常用的快捷键\VS中的常用快捷键\VS中的常用快捷键\bin\Debug\VS中的常用快捷键.exe
+F:\work\Project\C#\VS中常用的快捷键\VS中的常用快捷键\VS中的常用快捷键\bin\Debug\VS中的常用快捷键.pdb
+F:\work\Project\C#\VS中常用的快捷键\VS中的常用快捷键\VS中的常用快捷键\obj\x86\Debug\VS中的常用快捷键.exe
+F:\work\Project\C#\VS中常用的快捷键\VS中的常用快捷键\VS中的常用快捷键\obj\x86\Debug\VS中的常用快捷键.pdb
+F:\work\Project\C#\VS中常用的快捷键\VS中的常用快捷键\VS中的常用快捷键\obj\x86\Debug\VS中的常用快捷键.csprojAssemblyReference.cache
+F:\work\Project\C#\VS中常用的快捷键\VS中的常用快捷键\VS中的常用快捷键\obj\x86\Debug\VS中的常用快捷键.csproj.CoreCompileInputs.cache
