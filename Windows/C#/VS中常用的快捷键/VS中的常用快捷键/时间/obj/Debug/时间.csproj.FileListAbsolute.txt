@@ -1,0 +1,7 @@
+F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\时间\bin\Debug\时间.exe.config
+F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\时间\bin\Debug\时间.exe
+F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\时间\bin\Debug\时间.pdb
+F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\时间\obj\Debug\时间.csprojAssemblyReference.cache
+F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\时间\obj\Debug\时间.csproj.CoreCompileInputs.cache
+F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\时间\obj\Debug\时间.exe
+F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\时间\obj\Debug\时间.pdb
