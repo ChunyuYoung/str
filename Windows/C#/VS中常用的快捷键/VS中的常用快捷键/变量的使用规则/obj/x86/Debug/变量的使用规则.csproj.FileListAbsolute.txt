@@ -4,3 +4,9 @@ F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用
 F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\obj\x86\Debug\变量的使用规则.csproj.CoreCompileInputs.cache
 F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\obj\x86\Debug\变量的使用规则.exe
 F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\obj\x86\Debug\变量的使用规则.pdb
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\bin\Debug\变量的使用规则.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\bin\Debug\变量的使用规则.pdb
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\obj\x86\Debug\变量的使用规则.csprojAssemblyReference.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\obj\x86\Debug\变量的使用规则.csproj.CoreCompileInputs.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\obj\x86\Debug\变量的使用规则.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\变量的使用规则\obj\x86\Debug\变量的使用规则.pdb

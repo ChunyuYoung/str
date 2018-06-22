@@ -5,3 +5,10 @@ F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用
 F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\obj\Debug\类型转换.csproj.CoreCompileInputs.cache
 F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\obj\Debug\类型转换.exe
 F:\work\Project\Source\Repos\str\Windows_程序开发工程目录\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\obj\Debug\类型转换.pdb
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\bin\Debug\类型转换.exe.config
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\bin\Debug\类型转换.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\bin\Debug\类型转换.pdb
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\obj\Debug\类型转换.csprojAssemblyReference.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\obj\Debug\类型转换.csproj.CoreCompileInputs.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\obj\Debug\类型转换.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\类型转换\obj\Debug\类型转换.pdb

@@ -1,0 +1,7 @@
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\if结构\bin\Debug\if结构.exe.config
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\if结构\bin\Debug\if结构.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\if结构\bin\Debug\if结构.pdb
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\if结构\obj\Debug\if结构.csprojAssemblyReference.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\if结构\obj\Debug\if结构.csproj.CoreCompileInputs.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\if结构\obj\Debug\if结构.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\if结构\obj\Debug\if结构.pdb

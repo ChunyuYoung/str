@@ -1,0 +1,7 @@
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\异常捕获\bin\Debug\异常捕获.exe.config
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\异常捕获\bin\Debug\异常捕获.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\异常捕获\bin\Debug\异常捕获.pdb
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\异常捕获\obj\Debug\异常捕获.csprojAssemblyReference.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\异常捕获\obj\Debug\异常捕获.csproj.CoreCompileInputs.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\异常捕获\obj\Debug\异常捕获.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\异常捕获\obj\Debug\异常捕获.pdb
