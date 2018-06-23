@@ -1,0 +1,7 @@
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\循环结构_练习\bin\Debug\循环结构_练习.exe.config
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\循环结构_练习\bin\Debug\循环结构_练习.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\循环结构_练习\bin\Debug\循环结构_练习.pdb
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\循环结构_练习\obj\Debug\循环结构_练习.csprojAssemblyReference.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\循环结构_练习\obj\Debug\循环结构_练习.csproj.CoreCompileInputs.cache
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\循环结构_练习\obj\Debug\循环结构_练习.exe
+F:\work\Project\Source\Repos\str\Windows\C#\VS中常用的快捷键\VS中的常用快捷键\循环结构_练习\obj\Debug\循环结构_练习.pdb
