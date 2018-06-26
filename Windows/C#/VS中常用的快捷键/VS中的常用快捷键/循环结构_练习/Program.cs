@@ -78,36 +78,116 @@ namespace 循环结构_练习
             //    }
             //}
             ////当不会大于等于10次以上就要提示放学
-            //if (i>=10)
+            //if (i >= 10)
             //{
             //    Console.WriteLine("老师:都给你讲了10遍了!还不会,快去回家养猪吧,孩纸!");
             //}
             //Console.ReadKey();
             #endregion
 
-            //2006年培养学员80000人
-            //每年增长25%
-            //请按照此增长速度
-            //到哪一年培训学员人数将达到20万人?
+            #region 每年增长率25%,什么时候能达到20万人
+            ////2006年培养学员80000人
+            ////每年增长25%
+            ////请按照此增长速度
+            ////到哪一年培训学员人数将达到20万人?
 
-            //年份-->year-->2006年
-            int year = 2006;
-            //第一年 总人数 80000人
-            double FirstYear = 8;
-            //每年人口增长率 25%-->0.25
-            double AnnualGrowth = 0.25;
-            //8*(5/4)ⁿ=20
+            ////年份-->year-->2006年
+            //int year = 2006;
+            ////第一年 总人数 80000人
+            //double FirstYear = 8;
+            ////每年人口增长率 25%-->0.25
+            //double AnnualGrowth = 0.25;
+            ////8*(5/4)ⁿ=20
 
-            while (true)
-            {
-                //YearPeople = (FirstYear * AnnualGrowth) + FirstYear;
-                year++;
-                FirstYear *=(AnnualGrowth + 1);
-                if (FirstYear > 20)
-                    break;
-            }
-            Console.WriteLine("{0}年人口达到了20万人", year);
-            Console.ReadKey();
+            //while (true)
+            //{
+            //    //YearPeople = (FirstYear * AnnualGrowth) + FirstYear;
+            //    year++;
+            //    FirstYear *= (AnnualGrowth + 1);
+            //    if (FirstYear > 20)
+            //        break;
+            //}
+            //Console.WriteLine("{0}年人口达到了20万人", year);
+            //Console.ReadKey();
+            #endregion
+
+            #region 只能输入yes或者y
+            ////提示用户输入yes或者y
+            ////要求:只能输入yes或者no,只要不是yes或者no就要求用户一直重新输入
+
+            ////循环体:提示用户输入 我们接受并且判断
+            ////循环条件:输入的不能是yes或者no
+
+            //string input = "";
+            //while (input != "yes" && input != "no")
+            //{
+            //    Console.WriteLine("请输入yes或者no");
+            //    input = Console.ReadLine();
+            //}
+            //Console.ReadKey(); 
+            #endregion
+
+            #region 限制用户输入用户米和密码的次数(3次)
+            ////提示用户输入用户名和密码 要求用户名等于admin密码等于888888
+            ////只要用户名错误或者密码错误就重新输入
+            ////但是,最多只能输入3次
+
+            ////循环体:提示用户输入用户名密码 接收 判断
+            ////循环条件:用户户名或者面错误 最多错误3次
+
+            //int i = 0;
+            //string userName = "";
+            //string userPass = "";
+            //while ((userName != "admin" || userPass != "888888") && i <= 3)
+            //{
+            //    Console.WriteLine("请输入用户名:");
+            //    userName = Console.ReadLine();
+            //    Console.WriteLine("请输入密码:");
+            //    userPass = Console.ReadLine();
+            //    i++;
+            //}
+            //Console.ReadKey(); 
+            #endregion
+
+            #region 判断用户输入的用户名和面是否为空
+            ////写两个血环
+            ////第一二循环提示用户A输入用户名 要求A的用户名不能为空,只要为空,就要求A一直重新输入
+
+            ////循环体:提示A输入用户名 接收 判断
+            ////循环条件:输入的用户名为空
+
+            //string userNameA = "";
+            //while (userNameA == "")
+            //{
+            //    Console.WriteLine("请输入用户名,不能为空");
+            //    userNameA = Console.ReadLine();
+            //}
+            ////Console.ReadKey();
+
+            ////第二个循环提示用户B输入用户名,要求B的用户名不能跟A的用户名相同 并且不能为空
+            ////只要为空,并且跟A的用户名相同,就一直提示用户B重新输入用户名
+
+            ////缓缓体:提示输入B的用户名 接收判断
+            ////循环条件:用户名为空 或者跟A的相同
+
+            //Console.WriteLine("请输入用户性,不能跟A相同,并且不能为空");
+            //string userNameB = Console.ReadLine();
+            //while (userNameB == "" || userNameB == userNameA)
+            //{
+            //    if (userNameB == "")
+            //    {
+            //        Console.WriteLine("用户名不能为空,请重新输入");
+            //        userNameB = Console.ReadLine();
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("用户名B不能跟A的用户名相同,请重新输入");
+            //        userNameB = Console.ReadLine();
+            //    }
+            //}
+            //Console.ReadKey(); 
+            #endregion
+
         }
     }
 }
