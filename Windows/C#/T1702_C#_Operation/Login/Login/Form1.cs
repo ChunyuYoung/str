@@ -27,7 +27,7 @@ namespace Login
             }
             else    //不为空
             {
-                if (textBox1.Text == "史钿睿" && textBox2.Text == "177063")     
+                if (textBox1.Text == "STR" && textBox2.Text == "T1702")     
                 {
                     MessageBox.Show("登陆成功");
                     Form2 f2 = new Form2();
