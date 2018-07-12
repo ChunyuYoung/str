@@ -75,6 +75,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "三元表达式", "三元�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "随机数", "随机数\随机数.csproj", "{AE842B1D-7C39-4580-9026-025DB417AF6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_02枚举", "_02枚举\_02枚举.csproj", "{E8564789-EAB9-40C6-8D96-40E7612A00E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_03枚举的练习", "_03枚举的练习\_03枚举的练习.csproj", "{4FC4990D-C236-4C6A-937B-78DC5D95175B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_04枚举和int以及string类型之间的转换", "_04枚举和int以及string类型之间的转换\_04枚举和int以及string类型之间的转换.csproj", "{B86FED9F-5D81-451F-8BB7-C6FA994416C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -367,6 +373,30 @@ Global
 		{AE842B1D-7C39-4580-9026-025DB417AF6B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AE842B1D-7C39-4580-9026-025DB417AF6B}.Release|x86.ActiveCfg = Release|Any CPU
 		{AE842B1D-7C39-4580-9026-025DB417AF6B}.Release|x86.Build.0 = Release|Any CPU
+		{E8564789-EAB9-40C6-8D96-40E7612A00E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8564789-EAB9-40C6-8D96-40E7612A00E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8564789-EAB9-40C6-8D96-40E7612A00E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E8564789-EAB9-40C6-8D96-40E7612A00E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{E8564789-EAB9-40C6-8D96-40E7612A00E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8564789-EAB9-40C6-8D96-40E7612A00E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8564789-EAB9-40C6-8D96-40E7612A00E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{E8564789-EAB9-40C6-8D96-40E7612A00E7}.Release|x86.Build.0 = Release|Any CPU
+		{4FC4990D-C236-4C6A-937B-78DC5D95175B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FC4990D-C236-4C6A-937B-78DC5D95175B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FC4990D-C236-4C6A-937B-78DC5D95175B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4FC4990D-C236-4C6A-937B-78DC5D95175B}.Debug|x86.Build.0 = Debug|Any CPU
+		{4FC4990D-C236-4C6A-937B-78DC5D95175B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FC4990D-C236-4C6A-937B-78DC5D95175B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FC4990D-C236-4C6A-937B-78DC5D95175B}.Release|x86.ActiveCfg = Release|Any CPU
+		{4FC4990D-C236-4C6A-937B-78DC5D95175B}.Release|x86.Build.0 = Release|Any CPU
+		{B86FED9F-5D81-451F-8BB7-C6FA994416C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86FED9F-5D81-451F-8BB7-C6FA994416C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86FED9F-5D81-451F-8BB7-C6FA994416C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B86FED9F-5D81-451F-8BB7-C6FA994416C3}.Debug|x86.Build.0 = Debug|Any CPU
+		{B86FED9F-5D81-451F-8BB7-C6FA994416C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86FED9F-5D81-451F-8BB7-C6FA994416C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86FED9F-5D81-451F-8BB7-C6FA994416C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{B86FED9F-5D81-451F-8BB7-C6FA994416C3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
