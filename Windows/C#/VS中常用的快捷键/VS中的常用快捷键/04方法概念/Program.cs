@@ -40,8 +40,9 @@ namespace _04方法概念
             #endregion
             #region 练习4:计算数组元素之和
             //练习4:计算输入数组的和:int Sum(int[] values)
-            int Num = 0;
-            Console.WriteLine("数组之和为:" + Program.arrayNum(Num));
+            int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int sum = Program.Number(nums);
+            Console.WriteLine(sum);
             Console.ReadKey(); 
             #endregion
         }
@@ -104,24 +105,18 @@ namespace _04方法概念
         #endregion
         #region 方法:判断输入的是否为整数
         /// <summary>
-        /// 判断输入的是否为整数
+        /// 计算一个整数类型数组的和
         /// </summary>
-        /// <param name="n1">获取一个整数</param>
-        /// <returns>返回一个整数</returns>
-        public static int Number(int n1)
+        /// <param name="n1">要求总和的数组</param>
+        /// <returns>返回数组的组合</returns>
+        public static int Number(int[] n1)
         {
-            while (true)
+            int sum = 0;
+            for (int i = 0; i < n1.Length; i++)
             {
-                try
-                {
-                    n1 = int.Parse(Console.ReadLine());
-                    return n1;
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("请输入整数!");
-                }
+                sum += n1[i];
             }
+            return sum;
         } 
         #endregion
     }
