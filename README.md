@@ -1,4 +1,4 @@
-![alt text](https://github.com/TianruiShi/str/blob/master/Src/Image/我的极客方式.png "Logo 我的极客方式")
+<center>![alt text](https://github.com/TianruiShi/str/blob/master/Src/Image/我的极客方式.png "Logo 我的极客方式")</center>
 ------------------------------------------------------------------------------------------------------
 
 # 作业和练习题
