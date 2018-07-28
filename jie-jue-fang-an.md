@@ -1,7 +1,3 @@
----
-description: 我们将会更新一些问题以及解决方案
----
-
 # 解决方案
 
 ## MIUI相册：xiaomi云服务文件路径
@@ -253,5 +249,12 @@ menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menu
 5. 手动添加一行smc.version= "0"然后保存关闭
 6. 再重新启动虚拟机
 
+## CK-DE Direct运行库修复后依然报错
 
+1. 打开控制面板
+2. 程序和功能
+3. 启用或关闭windows功能
+4. 勾选旧版本组件
+5. DirectPlay
+6. 确定\(可以不联网\)
 
