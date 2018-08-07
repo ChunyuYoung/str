@@ -13,9 +13,10 @@ namespace _04方法概念
             #region 练习1:声明一个方法来判断输入的是否为整数
             //练习1:读取输入的整数,定义成方法,多次调用(如果用户输入的是数字
             //则返回,否则提示用户重新输入
-            int n1 = 0;
+            int Num=0;
             Console.WriteLine("获取一个整数:(判断输入的是否是整数)");
-            Console.WriteLine(Program.Number(n1));
+            Program.arrayNum(Num);
+            Console.WriteLine(Num);
             //Console.ReadKey();
             Console.WriteLine("第一个练习题完成!\n");
             #endregion
@@ -54,10 +55,19 @@ namespace _04方法概念
         /// <returns>返回数组元素之和</returns>
         public static int arrayNum(int Num)
         {
-            int[] aryNum = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            for (int i = 0; i < aryNum.Length; i++)
+            //int[] aryNum = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //for (int i = 0; i < aryNum.Length; i++)
+            //{
+            //    Num += aryNum[i];
+            //}
+            try
             {
-                Num += aryNum[i];
+                int num = int.Parse(Console.ReadLine());
+                //return Num;
+            }
+            catch
+            {
+                Console.WriteLine("输入的不是整数");
             }
             return Num;
         } 
