@@ -345,11 +345,18 @@ namespace _04飞行棋游戏
         //玩家胜利
         public static void Win()
         {
-            Console.WriteLine("■         ■■■          ■    ■■■■■      ■■■■  ");
-            Console.WriteLine("■         ■■■          ■      ■      ■      ■");
-            Console.WriteLine("  ■      ■     ■     ■        ■      ■      ■");
-            Console.WriteLine("  ■      ■     ■     ■        ■      ■      ■");
-            Console.WriteLine("    ■■■          ■■■        ■■■■■    ■      ■");
+            //Console.WriteLine("■         ■■■          ■    ■■■■■      ■■■■  ");
+            //Console.WriteLine("■         ■■■          ■      ■      ■      ■");
+            //Console.WriteLine("  ■      ■     ■     ■        ■      ■      ■");
+            //Console.WriteLine("  ■      ■     ■     ■        ■      ■      ■");
+            //Console.WriteLine("    ■■■          ■■■        ■■■■■    ■      ■");
+
+            //中文全角
+            Console.WriteLine("■　　　　　　　■■■　　　　　　　■　　　　■■■■■　　　　　　■■■■　　");
+            Console.WriteLine("■　　　　　　　■■■　　　　　　　■　　　　　　■　　　　　　■　　　　　　■");
+            Console.WriteLine("　■　　　　　■　　　■　　　　　■　　　　　　　■　　　　　　■　　　　　　■");
+            Console.WriteLine("　　■　　　■　　　　　■　　　■　　　　　　　　■　　　　　　■　　　　　　■");
+            Console.WriteLine("　　　■■■　　　　　　　■■■　　　　　　　■■■■■　　　　■　　　　　　■");
         }
     }
 }

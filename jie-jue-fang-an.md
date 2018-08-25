@@ -96,7 +96,7 @@
 2. 点击SQL express的协议,我们需要启动所有状态
 3. 选择TCP/IP,点击右键,选择属性,修改连接数据库的端口地址
 
-* IP13 IP位本机IP,TCP端口为1433,然后选择启动 已启用:是 
+* IP13 IP位本机IP,TCP端口为1433,然后选择启动 已启用:是
 * IP8 IP地址为:127.0.0.1 已启用:是
 * IPALL TCP端口为1433
 * 然后应用确定,并重新启动服务
@@ -196,7 +196,7 @@ menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menu
 1. 选项
 2. 调试
 3. 设置
-4. 取消勾选\(INT3终端,单步终端,非法访问内存,整数除以0,无效或特殊指令,所有FPU异常,同时忽略一下制定的异常或范围\) 
+4. 取消勾选\(INT3终端,单步终端,非法访问内存,整数除以0,无效或特殊指令,所有FPU异常,同时忽略一下制定的异常或范围\)
 5. 插件
 6. StrongOD
 7. Options
@@ -292,5 +292,15 @@ menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menu
 
 注意:如果在**Windows开机\(正在运行\)**的情况下运行Dism++来备份系统,这样虽然依然可以备份,但是实际上在Windows运行中,部分系统文件是拒绝访问的,也就是说当一个程序正在对某个文件进行RW时,另一个进程无法读取该文件,这就导致了Dism++在备份文件时,会无法备份这些文件,导致后期恢复系统时无效果,所以建议使用 **微PE工具箱** ,这个系统内置了DISM++,所以你在这个系统下可以完整的备份Windows.
 
+##**Atom Failed to activate the markdown-scroll-sync package**
 
-
+[问题已经在这里得到解决](https://github.com/vincentcn/markdown-scroll-sync/issues/560)
+-
+引起这个问题是**markdown-scroll-sync**与**markdown-preview-plus**之间的冲突,你可以禁用**markdown-preview-plus**,然后你就会发现这个错误提示将不会在出现.
+然而，真正有趣的是，markdown-preview-plus现在可以在其设置页面中同步滚动。
+只要勾选:
+```
+Sync preview position when text in editor changes
+Sync preview position when text editor is scrolled
+Sync editor position when preview is scrolled
+```

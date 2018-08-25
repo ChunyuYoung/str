@@ -2,7 +2,7 @@
 int main(void)
 {
     char ch;
-    
+
     while ((ch=getchar())!='#')
     {
         if (ch=='\n')
