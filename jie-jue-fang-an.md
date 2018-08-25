@@ -292,7 +292,7 @@ menuentry 'Ubuntu' --class ubuntu --class gnu-linux --class gnu --class os $menu
 
 注意:如果在**Windows开机\(正在运行\)**的情况下运行Dism++来备份系统,这样虽然依然可以备份,但是实际上在Windows运行中,部分系统文件是拒绝访问的,也就是说当一个程序正在对某个文件进行RW时,另一个进程无法读取该文件,这就导致了Dism++在备份文件时,会无法备份这些文件,导致后期恢复系统时无效果,所以建议使用 **微PE工具箱** ,这个系统内置了DISM++,所以你在这个系统下可以完整的备份Windows.
 
-##**Atom Failed to activate the markdown-scroll-sync package**
+## **Atom Failed to activate the markdown-scroll-sync package**
 
 [问题已经在这里得到解决](https://github.com/vincentcn/markdown-scroll-sync/issues/560)
 -
