@@ -10,18 +10,182 @@ namespace _其实我很开心呐
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("旁白:在学校,你坐在操场的草坪上发呆");
-            Console.WriteLine("旁白:你在思考着一你现在的生活,想象自己以后会成为怎样的人");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("--> 你坐在草坪上发呆");
+            Console.WriteLine("--> 在你身后过来了一个女孩,她拿着一大袋零食");
+            Console.WriteLine("女孩: 嗨,你好");
+            Console.WriteLine("你: 呃...");
+            Console.WriteLine("你: 你是在...和我说话吗?");
+            Console.WriteLine("女孩: 噗~,不然嘞");
+            Console.WriteLine();
+
+            for (int i = 0; i < 30; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("女孩:我给你买了很多点心,一起来吃吧");
+            Console.WriteLine();
+
+            Console.WriteLine();
+            Console.WriteLine();
+            //内心状态_彩虹_红色
+            for (int j = 0; j < 72; j++)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("~");
+                if (j == 30)
+                {
+                    Console.Write("此时此刻的内心状态");
+                }
+            }
+            Console.WriteLine();
+
+            //内心状态_彩虹_绿色
+            for (int k = 0; k < 72; k++)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("~");
+                if (k == 30)
+                {
+                    Console.Write("此时此刻的内心状态");
+                }
+            }
+            Console.WriteLine();
+
+            //内心状态_彩虹_紫红色
+            for (int l = 0; l < 72; l++)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.Write("~");
+                if (l == 30)
+                {
+                    Console.Write("此时此刻的内心状态");
+                }
+            }
+            Console.WriteLine();
+
+            //内心状态_彩虹_青色
+            for (int m = 0; m < 72; m++)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("~");
+                if (m == 30)
+                {
+                    Console.Write("此时此刻的内心状态");
+                }
+            }
+            Console.WriteLine();
+
+            //内心状态_彩虹_红色
+            for (int n = 0; n < 72; n++)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("~");
+                if (n == 30)
+                {
+                    Console.Write("此时此刻的内心状态");
+                }
+            }
+            Console.WriteLine();
+
+            //内心状态_彩虹_绿色
+            for (int o = 0; o < 72; o++)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("~");
+                if (o == 30)
+                {
+                    Console.Write("此时此刻的内心状态");
+                }
+            }
+            Console.WriteLine();
+
+            //内心状态_彩虹_紫红色
+            for (int p = 0; p < 72; p++)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.Write("~");
+                if (p == 30)
+                {
+                    Console.Write("此时此刻的内心状态");
+                }
+            }
+            Console.WriteLine();
+
+            //内心状态_彩虹_青色
+            for (int q = 0; q < 72; q++)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Write("~");
+                if (q == 30)
+                {
+                    Console.Write("此时此刻的内心状态");
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("选项卡--> A:嗯,好!     B:emmmmm,不了");
+
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
+            string ch = Console.ReadLine();
+            string s = Program._Eat(ch);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("你:{0}",s);
+            Console.WriteLine();
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("女孩:え～～～～～～～,难得人家还了好多呢");
+            Console.WriteLine("女孩:好可惜啊!");
+            Console.WriteLine("女孩:那好吧!");
+            Console.WriteLine("(女孩走了)");
+
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("---------------------------------------------------");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("你看到了一个女生提着一袋零食坐在你旁边");
-            Console.WriteLine("那个女生问你要吃零食吗?");
-            string Eat = Console.ReadLine();
-            _判断是否吃零食 eat = new _判断是否吃零食(Eat);
-            Console.WriteLine(eat);
+            Console.WriteLine("你:其实我很开心呐!");
+            Console.WriteLine("你: 谢谢你");
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine();
+            Console.WriteLine("游戏结束");
             Console.ReadKey();
+        }
+        public static string _Eat(string s)
+        {
+            while (s != "A" && s != "B")
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                int i = 0;
+                i++;
+                switch(i)
+                {
+                    case 2:
+                    case 3:
+                        Console.WriteLine("--> 这是剧情任务,你不能这样做");
+                        break;
+                    default:Console.WriteLine("--> 捣乱可是坏孩子哦");
+                        break;
+                }
+
+                Console.WriteLine("错误: 请输入A/B");
+                s = Console.ReadLine();
+            }
+                if (s == "A")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine(@"你(思考了一下)_(你想吃,但是你没有说出口)");
+                    return s = "你: emmmmmm,我...不了吧";
+                }
+                else if (s == "B")
+                {
+                    return s = "你: emmmm,谢谢,我不想吃";
+                }
+                return s;
         }
     }
 }
