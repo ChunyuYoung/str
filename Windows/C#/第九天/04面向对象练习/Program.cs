@@ -15,7 +15,11 @@ namespace _04面向对象练习
             p.xlScore();
             Student pp = new Student("李华", 0, '0', 100, 100, 100);  //函数重载,构造函数调用全参构造函数
             pp.liHua();
-            Console.ReadKey();
+            Health h1 = new Health("张三", "健康", 18, '男');
+            h1.strHealth();
+            Health h2 = new Health("str","重病",20,'男');
+            h2.strHealth();
+            Console.ReadKey(false);
         }
     }
 }

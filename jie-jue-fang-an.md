@@ -304,3 +304,76 @@ Sync preview position when text in editor changes
 Sync preview position when text editor is scrolled
 Sync editor position when preview is scrolled
 ```
+
+## Mincrosoft Visual Studio 2017 编译汇编文件
+---
+1. 新建-->项目-->Visual C++-->Windows控制台应用程序
+2. 删除-->源文件(下的所有.cpp文件)-->新建/添加项-->XXX.cpp为XXX.asm 
+3. 鼠标右键项目-->生成依赖项-->生成自定义-->勾选masm-->确定 
+4. 鼠标右键.asm文件-->属性-->常规-->项类型-->Microsoft Macro Assembler 
+5. Microsoft Macro Assembler-->Listing File-->Generate Preprocessed Source Listing-->否-->List All Available Information-->否 
+---
+需要再次检查的选项
+* 打开项目属性-->连接器-->系统-->子系统-->控制台 (/SUBSYSTEM:CONSOLE)-->高级-->main
+---
+测试代码:<br/>
+``` Assembly
+.386
+.model flat,stdcall
+.stack 4096
+ExitProcess PROTO,dwExitCode:DWORD
+
+.data
+.code
+main PROC
+	mov eax,5
+	add eax,6
+
+	INVOKE ExitProcess,0
+main ENDP
+END main
+```
+---
+## 配置HBuilen连接夜神模拟器调试APP
+打开控制台<br/>
+cd 进入夜神模拟器安装bin目录<br/>
+执行以下命令:<br/>
+nox_adb connect 127.0.0.1:62001<br/>
+nox_adb devices<br/>
+***
+然后进入HBuilder的tools\adbs目录<br/>
+执行以下命令<br/>
+adb connect 127.0.0.1:62001<br/>
+adb devices<br/>
+***
+## JDK-9.0.1
+环境变量:警告：请在环境变量中设置JAVA_HOME和PATH，例如：<br/>
+  JAVA_HOME=C:\Program Files\Java\jdk1.7.0_60<br/>
+  PATH=%PATH%;%JAVA_HOME%\bin;<br/>
+***
+## 易语言 取QQ头像
+***
+取QQ头像↓<br/>
+HTTP读文件 (“http://q.qlogo.cn/headimg_dl?bs=qq&dst_uin=” ＋ QQ ＋ “&src_uin=www.feifeiboke.com&fid=blog&spec=100”)<br/>
+取QQ昵称↓<br/>
+HTTP读文件 (“http://qq.ico.la/api/qq=” ＋ QQ ＋ “&format=xml”)<br/>
+取QQ昵称的接口返回的是UTF-8的编码，需要解码。<br/>
+***
+## GCC 编译C程序并输出汇编代码
+1. 预处理，生成预编译文件:
+Gcc –E hello.c –o hello.i
+2. 编译，生成汇编代码:
+Gcc –S hello.i –o hello.s
+3. 汇编，生成目标文件:
+Gcc –c hello.s –o hello.o
+4. 链接，生成可执行文件:
+Gcc hello.o –o hello
+***
+```
+gcc hello.c -o hello		//编译C文件并重命名编译后文件的名字
+gcc -S main.c -o main.s	//编译成汇编文件
+```
+***
+## UTAU汉化版,可能出现的问题以及解决方法
+如果UTAU汉化版不能正常运行,可以把那个English版装上,再用汉化版的解压出来的res文件夹覆盖.我的win8.1 64位就是这样用的<br/>
+***

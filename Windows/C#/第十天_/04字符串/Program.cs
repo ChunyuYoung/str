@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace _04字符串
 {
     class Program
@@ -26,6 +25,10 @@ namespace _04字符串
             //既然可以将string看成char类型的只读数组,所以我们可以通过下标去访问字符串中的某一个元素
             Console.WriteLine(s[0]);
             Console.WriteLine(s);
+
+            //str字符串分割数组
+            
+
             Console.ReadKey();
         }
     }

@@ -128,7 +128,7 @@ namespace _04飞行棋游戏
             {
                 Maps[timeTunnel[i]] = 4;
             }
-            
+                
         }
         /// <summary>
         /// 画地图
@@ -247,7 +247,7 @@ namespace _04飞行棋游戏
             Console.ReadKey(true);
             Console.WriteLine("{0}按任意键开始行动", PlayerNames[playerNumber]);
             Console.ReadKey(true);
-            //玩家A有可能猜到了玩家B 方块 幸运轮盘 地雷 暂停 时空隧道
+            //玩家A有可能踩到了玩家B 方块 幸运轮盘 地雷 暂停 时空隧道
             if (PlayerPos[playerNumber] == PlayerPos[1-playerNumber])
             {
                 Console.WriteLine("玩家{0}猜到了玩家{1},玩家{2}退6格", PlayerNames[playerNumber], PlayerNames[1-playerNumber], PlayerNames[1-playerNumber]);

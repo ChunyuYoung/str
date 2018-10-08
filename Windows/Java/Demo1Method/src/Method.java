@@ -1,29 +1,13 @@
+import java.util.Scanner;
 public class Method {
 	public static void main(String[] args) {
-		//1
-		Num1();
-		//2
-		Num2();
-		//3
-		Num3();
-		//4
-		Num4();
-	}
-	public static void Num1() {
-		//1
-		System.out.println(1);
-	}
-	public static void Num2() {
-		//2
-		System.out.println(2);
-	}
-	public static void Num3() {
-		//3
-		System.out.println(3);
-	}
-	public static void Num4() {
-		//4
-		System.out.println(4);
+		Scanner re = new Scanner(System.in);			//创建一个re的输入函数
+		System.out.println("你将输入一个整数!");						//从键盘上获取一个整数
+		//for循环
+		for (int i = 0; i < 5; i++) {
+			System.out.print("第"+i+"输出:");
+			int a[] = new int[i];//从键盘上获取一个整数
+			System.out.println(a+"得值");
+		}
 	}
 }
-

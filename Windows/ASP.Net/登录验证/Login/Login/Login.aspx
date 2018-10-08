@@ -1,11 +1,24 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Login.Login" Theme="" %>
 
 <!DOCTYPE html>
+<script runat="server">
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        if (TextBox1.Text == "" || TextBox2.Text == "")
+        {
+            Label3.Text = "错误:密码或账户不能为空";
+        }
+    }
+</script>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>登录验证</title>
+    <script>
+</script>
 </head>
 <body style="background-color: #252526">
     <form id="form1" runat="server">

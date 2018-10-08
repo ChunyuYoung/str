@@ -26,7 +26,12 @@ namespace _01面向对象
             storage.Name = "机械硬盘";
             storage.Rom = 1024;
             storage.writeStorage();
-            Console.ReadKey();
+            //病人记录
+            _Health health = new _Health();
+            health.Name = "StringOD";   //给_Health()类方法的静态字段赋值
+            health.Health = "严重";       
+            health.hlHealth();          //调用h1Health()在终端输出信息
+            Console.ReadKey(false);     //按任意键结束时不在终端上输出字符
         }
     }
 }
