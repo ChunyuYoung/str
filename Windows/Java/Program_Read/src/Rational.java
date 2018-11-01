@@ -1,14 +1,16 @@
+import java.util.Scanner;
+
 public class Rational {
    int numerator = 1 ;   //分子
    int denominator = 1; //分母
    void setNumerator(int a) {  //设置分子
-      int c=f(Math.abs(a),denominator);  //计算最大公约数
-      numerator = a/c; 
-      denominator = denominator/c;
-      if(numerator<0&&denominator<0) {
-          numerator = -numerator;
-          denominator = -denominator;
-      }
+       int c = f(Math.abs(a), denominator);  //计算最大公约数
+       numerator = a / c;
+       denominator = denominator / c;
+       if (numerator < 0 && denominator < 0) {
+           numerator = -numerator;
+           denominator = -denominator;
+       }
    }
    void setDenominator(int b) {  //设置分母
       int c=f(numerator,Math.abs(b));  //计算最大公约数
@@ -60,7 +62,8 @@ public class Rational {
       result.setDenominator(newDenominator);
       return result;
    }
-   Rational muti(Rational r) { //乘法运算
+   Rational muti(Rational r) {
+      //乘法运算
       int a=r.getNumerator();
       int b=r.getDenominator();
       int newNumerator=numerator*a;
@@ -70,7 +73,8 @@ public class Rational {
       result.setDenominator(newDenominator);
       return result;
    }
-   Rational div(Rational r)  { //除法运算
+   Rational div(Rational r)  {
+      //除法运算
       int a=r.getNumerator();
       int b=r.getDenominator();
       int newNumerator=numerator*b;
@@ -81,7 +85,6 @@ public class Rational {
       return result;
    }
 }
-
 
 
 

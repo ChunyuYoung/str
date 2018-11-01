@@ -1,4 +1,4 @@
-import com.str.access.Student;
+package com.str.access;
 import java.util.Scanner;
 import javax.swing.*;
 public class Test {
@@ -12,7 +12,7 @@ public class Test {
         //获取名字
         System.out.println("获取名字");
         String name = value.next();
-        sValue.getName(name);
+        sValue.setName(name);
         //获取学号
         System.out.println("获取学号");
         int number = value.nextInt();
@@ -25,6 +25,7 @@ public class Test {
         //检验
 
         System.out.println("私有字段(主类)");
-        System.out.println("名字:"+sValue.setName()+"学号"+sValue.setNumber()+"成绩:"+sValue.setScore());
+        System.out.println("名字:"+sValue.setName(name)+"学号"+sValue.getNumber(number)+"成绩:"+sValue.getScore(score));
+        sValue.Disy();
     }
 }

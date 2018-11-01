@@ -1,28 +1,13 @@
-public abstract class People {
-    private String name = "猫";
-    private String food = "狗";
-    private String sound = "猪";
-
-    public abstract String initName();
-    public abstract String initFood();
-    public abstract String initSound();
-
-    public String getName(){
-        return name;
-    }
-    public String getFood(){
-        return food;
-    }
-    public String getSound(){
-        return sound;
-    }
-    public People(){
-        this.name = initName();
-        this.food = initFood();
-        this.sound = initSound();
-    }
+package p1;
+public  class People {
+    private String s1 = "1";    //只能在本类中使用
+    public  String s2 = "2";
+    protected String s3 = "3";
+   // String s4 = "4";
+}
+class A1{
     public static void main(String args[]){
-        //People value = new People();
-
+        People str = new People();
+        System.out.println(str.s2+str.s3);
     }
 }

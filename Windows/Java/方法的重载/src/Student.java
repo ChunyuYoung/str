@@ -60,7 +60,7 @@ public class Student {
 		return weight;
 	}
 	void Display(){
-		System.out.println("姓名:"+this.name+"\t性别:"+this.gender+"\t年龄:"+this.age+"\t存款:"+this.money);
+		System.out.println("姓名:"+this.name+"\t性别:"+this.gender+"\t年龄:"+this.age+"\t存款:"+this.money+"\t体重:"+this.weight);
 	}
 	
 }

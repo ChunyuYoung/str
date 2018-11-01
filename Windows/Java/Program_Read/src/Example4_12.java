@@ -1,4 +1,4 @@
-class People {
+class People1 {
    float hello(int a,int b) {
       return a+b;
    }
@@ -11,7 +11,7 @@ class People {
 }
 public class Example4_12 {
     public static void main(String args[]) {
-      People tom = new People();
+      People1 tom = new People1();
       System.out.println(tom.hello(10,20));
       System.out.println(tom.hello(10L,20));
       System.out.println(tom.hello(10.0,20));

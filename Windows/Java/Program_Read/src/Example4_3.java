@@ -25,6 +25,7 @@ public class Example4_3 {
         System.out.println("zhubajie现在的头:"+zhubajie.head);
         sunwukong.speak("老孙我重1000斤,我想骗八戒背我"); //对象调用方法
         System.out.println("sunwukong现在的头:"+sunwukong.head);
+
    }
 }
 

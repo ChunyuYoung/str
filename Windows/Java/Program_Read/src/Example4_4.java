@@ -1,4 +1,4 @@
-class Point {
+class Point1 {
     int x,y;
     void setXY(int m,int n){
          x = m;
@@ -7,9 +7,9 @@ class Point {
 }
 public class Example4_4 {
    public static void main(String args[]) {
-      Point p1,p2;                
-      p1=new Point();         
-      p2=new Point();
+      Point1 p1,p2;
+      p1=new Point1();
+      p2=new Point1();
       System.out.println("p1的引用:"+p1);
       System.out.println("p2的引用:"+p2);
       p1.setXY(1111,2222);
