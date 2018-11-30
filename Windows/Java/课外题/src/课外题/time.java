@@ -4,8 +4,8 @@ public class time {
 	public static void main(String[] args) {
 		Scanner value = new Scanner(System.in);
 		System.out.println("你将要输入一个正整数");
-		int time = value.nextInt();
-		int day=0,hour=0,min=0,second=0;
+		double time = value.nextInt();
+		double day=0,hour=0,min=0,second=0;
 		//计算时间
 		//时间最大取值范围:time<86399
 		if(time<86400){		

@@ -1,6 +1,4 @@
-package com.str;
-
-//ÃÜ¶È=³¤¿í¸ßÃÜ¶È
+//ï¿½Ü¶ï¿½=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½
 public class CuboidWeight{
 	float density;
 	float fVolumn;
@@ -8,9 +6,9 @@ public class CuboidWeight{
 		this.density = density;
 		this.fVolumn = fVolumn;
 	}
-	//ÖØÁ¿
+	//ï¿½ï¿½ï¿½ï¿½
 	float weight(){
-		System.out.println("³¤·½ÌåÃÜ¶È:"+(this.density*fVolumn));
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½:"+(this.density*fVolumn));
 		return (this.density*fVolumn);
 	}
 }

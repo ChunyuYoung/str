@@ -1,13 +1,11 @@
-package com.str;
-
-//¼ÆËã¼ÛÖµ
+//ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 public class CuboidValue extends CuboidWeight{
 	float value;
 	public CuboidValue(float density, float fVolumn) {
 		super(density, fVolumn);
 	}
 
-	//¼ÛÖµ
+	//ï¿½ï¿½Öµ
 	void coust(){	
 		System.out.println(density*fVolumn);
 	}

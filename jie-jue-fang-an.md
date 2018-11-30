@@ -48,14 +48,20 @@ int a = 4, b = 8, c = 10;
 ***
 ## Notepad++ 编译运行C文件
 ### 编译并运行:单击菜单,选择最上选项”运行“,或直接按下F5.弹出运行窗口
-* `输入:cmd /k gcc -o "$(CURRENT_DIRECTORY)$(NAME_PART).exe" "$(FULL_CURRENT_PATH)" && CLS && "$(CURRENT_DIRECTORY)$(NAME_PART).exe" & PAUSE & EXIT单击运行即可.`
+``` text
+输入:cmd /k gcc -o "$(CURRENT_DIRECTORY)$(NAME_PART).exe" "$(FULL_CURRENT_PATH)" && CLS && "$(CURRENT_DIRECTORY)$(NAME_PART).exe" & PAUSE & EXIT单击运行即可.
+```
 ***
 ### 也可以先编译再运行
 #### 编译:
-* `输入:cmd /k gcc -Wall -o "$(CURRENT_DIRECTORY)$(NAME_PART).exe" "$(FULL_CURRENT_PATH)" & PAUSE & EXIT`
+``` text
+输入:cmd /k gcc -Wall -o "$(CURRENT_DIRECTORY)$(NAME_PART).exe" "$(FULL_CURRENT_PATH)" & PAUSE & EXIT
+```
 ***
 #### 运行:
-* `输入:cmd /k "$(CURRENT_DIRECTORY)$(NAME_PART).exe" & PAUSE & EXIT`
+``` text
+输入:cmd /k "$(CURRENT_DIRECTORY)$(NAME_PART).exe" & PAUSE & EXIT
+```
 ***
 ## 添加鼠标右键菜单
 1. win+R
@@ -110,9 +116,11 @@ initrd    /boot/initrd.img-4.10.0-28-generic
 ***
 ### 进入操作系统之后发现每次启动都需要更改引导文件
 1. 打开终端
-2. `sudo gedit /boot/grub/grub.cfg`
-3. 看到如下代码:修改倒数第二行quiet splash为nomodeset
-4. 然后在找到倒数第四行的末尾添加:
+``` text
+sudo gedit /boot/grub/grub.cfg
+```
+2. 看到如下代码:修改倒数第二行`quiet splash`为`nomodeset`
+3. 然后在找到倒数第四行的末尾添加:
    ```text
    acpi_osi=Linux nomodeset
    ```
@@ -351,3 +359,21 @@ nox_adb devices
 adb connect 127.0.0.1:62001
 adb devices
 ```
+# 下载XX99网页小游戏
+1. F12-->NetWork-->过滤SWF-->查找过滤之后最有可能的主程序文件.swf
+2. 使用浏览器运行小游戏,编写html代码
+``` html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+	<body>
+		<embed src="勇者之路精灵物语速升版.swf" width="1024" height="800"></embed>
+	</body>
+</html>
+```
+* 保存并运行
+***

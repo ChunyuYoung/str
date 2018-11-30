@@ -1,26 +1,25 @@
-package com.str;
 import java.util.Scanner;
 public class Test {
 	public static void main(String[] args) {
-		//Êä³ö³¤·½ÌåµÄÌå»ı,ÖØÁ¿ºÍ¼ÛÖµ
-		//Ìå»ı:v³¤=abc
-		System.out.println("Äã½«ÊäÈëÈı¸öĞ¡Êı/ÕûÊı:³¤¿í¸ß");
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Öµ
+		//ï¿½ï¿½ï¿½:vï¿½ï¿½=abc
+		System.out.println("ï¿½ã½«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½");
 		Scanner value = new Scanner(System.in);
 		float f1Value = value.nextFloat();
 		float f2Value = value.nextFloat();
 		float f3Value = value.nextFloat();
-		float fVolumn;	//Ìå»ı
-		float fDensity;	//ÖØÁ¿
+		float fVolumn;	//ï¿½ï¿½ï¿½
+		float fDensity;	//ï¿½ï¿½ï¿½ï¿½
 		Cuboid c1 = new Cuboid(f1Value,f2Value,f3Value);
-		fVolumn = c1.volumn();	//»ñÈ¡CuboidÀà³¤·½Ìå»ı
-		c1.volumn();	//Êä³ö³¤·½Ìå»ı
-		//ÃÜ¶È=³¤¿í¸ßÃÜ¶È
-		System.out.println("Äã½«ÊäÈëÒ»¸öĞ¡Êı/ÕûÊı:ÃÜ¶È");
+		fVolumn = c1.volumn();	//ï¿½ï¿½È¡Cuboidï¿½à³¤ï¿½ï¿½ï¿½ï¿½ï¿½
+		c1.volumn();	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//ï¿½Ü¶ï¿½=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½
+		System.out.println("ï¿½ã½«ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ğ¡ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½:ï¿½Ü¶ï¿½");
 		float f4Value = value.nextFloat();
 		CuboidWeight c2 = new CuboidWeight(f4Value,fVolumn);
 		fDensity = c2.weight();
 		c2.weight();
-		//¼ÛÖµ=Ìå»ıÖØÁ¿
+		//ï¿½ï¿½Öµ=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		CuboidValue f5 = new CuboidValue(fVolumn,fDensity);
 		f5.coust();
 	}
