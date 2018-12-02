@@ -24,10 +24,9 @@ public class GameMain {
 				System.out.println("你必须输入列表中的编号");
 			}
 		System.out.println();					//换行
-		
 		//获取游戏启动编号
 		switch(number) {
-		case 1:								//1.勇者之路精灵物语速升版
+		case 1:						//1.勇者之路精灵物语速升版
 			try {
 				Desktop des = Desktop.getDesktop();
 				File f = new File("勇者之路精灵物语速升版.html");
