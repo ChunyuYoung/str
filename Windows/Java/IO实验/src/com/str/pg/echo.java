@@ -201,10 +201,10 @@ public class echo {
 			for(int i=0;i<30;i++)System.out.print("=");System.out.println();	//分割线
 		//5.判断D盘上是否存在a.txt文件，若不存在则创建该文件。之后更改文件名为b5.txt。
 		try {
-			//File f = new File("F:\\b.txt");
-			if(f.getAbsolutePath() == "F:\\b.txt") {
-				System.out.println("文件将被重名:b.txt-->b5.txt");
-				FileInputStream fis_b5 = new FileInputStream("F:\\b.txt");
+			File f1 = new File("F:\\b.txt");
+			if(f1.getAbsolutePath() == "F:\\a.txt") {
+				System.out.println("文件将被重名:a.txt-->b5.txt");
+				FileInputStream fis_b5 = new FileInputStream("F:\\a.txt");
 				FileOutputStream fos_b5 = new FileOutputStream("F:\\b5.txt"); 	//重名文件
 				int fnos = 0;
 				while((fnos=fis_b5.read()) != -1) {
@@ -212,9 +212,9 @@ public class echo {
 				}
 			}
 			else {
-				FileOutputStream fos = new FileOutputStream("F:\\b.txt");		//创建文件
-				System.out.println("文件将被重名:b.txt-->b5.txt");
-				FileInputStream fis_b5 = new FileInputStream("F:\\b.txt");
+				FileOutputStream fos = new FileOutputStream("F:\\a.txt");		//创建文件
+				System.out.println("文件将被重名:a.txt-->b5.txt");
+				FileInputStream fis_b5 = new FileInputStream("F:\\a.txt");
 				FileOutputStream fos_b5 = new FileOutputStream("F:\\b5.txt"); 	//重名文件
 				int fnos = 0;
 				while((fnos=fis_b5.read()) != -1) {
