@@ -343,7 +343,6 @@ public class Registry extends JFrame implements ActionListener{
 		}
 		//取消:关闭注册界面
 		if(e.getSource().equals(QuXiao_AnNiu)) {
-//			this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);	//无效
 			setVisible(false);		//隐藏窗体
 		}
 		//获取数据长度
