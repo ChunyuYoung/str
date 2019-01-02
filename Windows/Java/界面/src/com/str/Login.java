@@ -1,3 +1,4 @@
+//Login.java
 package com.str;
 import java.awt.*;
 import java.awt.event.*;
@@ -95,7 +96,7 @@ public class Login extends JFrame implements ActionListener {
 					if((n=dis.read()) != -1) {
 						for(int i=0;i<ch.length;i++) {
 							ch[i] = dis.read();	
-//							System.out.println(ch[i]);
+//							System.out.println(ch[i]);		//验证
 						}
 					}
 					
@@ -154,7 +155,7 @@ public class Login extends JFrame implements ActionListener {
 					FileReader fr = new FileReader("F:\\reg.txt");	//读取
 					DataInputStream dis = new DataInputStream(new FileInputStream("F:\\reg.txt"));
 					File f = new File("F:\\reg.txt");
-					String fLength = f.length()-1+"";
+					String fLength = f.length()-1+"";	//解决了输入流不能读取文件第一个字符的情况
 					int fl = Integer.valueOf(fLength);
 					int n=0;
 					int ch[] = new int[fl]; 		//假设文件数据最大长度
@@ -172,7 +173,7 @@ public class Login extends JFrame implements ActionListener {
 						
 					//取密码长度
 					int MiMa_Dec = ch[ch.length-1];					//获取配置文件记录的密码长度
-					char MiMa_ChangDu_ch = (char)MiMa_Dec;			//将配置文件中的密码长度解析为实际可用长度位字符
+					char MiMa_ChangDu_ch = (char)MiMa_Dec;			//将配置文件中的密码长度解析为实际可用长度为字符
 					String MiMa_ChangDu_s  =  String.valueOf(MiMa_ChangDu_ch);	//转换密码实际长度为字符串
 					int MiMa_ChangDu = Integer.valueOf(MiMa_ChangDu_s);			//转换密码实际长度为整数
 //					System.out.println("取密码长度:"+MiMa_ChangDu);			//验证
@@ -220,13 +221,13 @@ public class Login extends JFrame implements ActionListener {
 		//获取用户和密码匹配成功状态
 		if(e.getSource().equals(DengLu_AnNiu)) {
 			if(YongHuMing_BianJiKuang.getText() != "" && MiMa_BianJiKuang.getText() != "") {
-				if(((byhm == true) && (bmm == true)) == true && (YongHuMing_BianJiKuang.getText() != "" && MiMa_BianJiKuang.getText() != "")){
+				if(((byhm == true) && (bmm == true)) == true && (YongHuMing_BianJiKuang.getText() != "" && MiMa_BianJiKuang.getText() != "")){	//登陆为空时不执行
 					JOptionPane.showMessageDialog(this, "登陆成功", "信息", 1);
 				}
 				else if(byhm != bmm){
 					JOptionPane.showMessageDialog(this, "用户不存在或输入错误", "登录失败", 1);
 				}
-				else{
+				else{		//登陆为空
 					JOptionPane.showMessageDialog(this, "非法操作", "信息", 1);
 				}
 			}
@@ -238,9 +239,11 @@ public class Login extends JFrame implements ActionListener {
 			setVisible(false);
 		}
 	}
+	//关闭窗口事件
 	public void windowListener(WindowListener e) {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
+	//主方法
 	public static void main(String[] args) {
 		new Login(); 		//登陆窗体界面
 	}

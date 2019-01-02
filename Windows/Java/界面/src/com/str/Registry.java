@@ -1,3 +1,4 @@
+//Registry.java
 package com.str;
 import java.awt.*;
 import javax.swing.*;
@@ -23,7 +24,7 @@ public class Registry extends JFrame implements ActionListener{
 	JRadioButton Nan_DanXuanAnNiu = new JRadioButton("男"); 				//单选按钮
 	JRadioButton Nv_DanXuanAnNiu = new JRadioButton("女"); 				
 	JComboBox SuoShuBanJi_ZuHeKuang = new JComboBox(s);
-	JButton ZhuCe_AnNiu = new JButton("注册");							//取消
+	JButton ZhuCe_AnNiu = new JButton("注册");							//按钮
 	JButton ChongZhi_AnNiu = new JButton("重置");
 	JButton QuXiao_AnNiu = new JButton("取消");
 	
