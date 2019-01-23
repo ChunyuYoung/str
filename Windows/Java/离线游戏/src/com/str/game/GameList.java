@@ -1,3 +1,4 @@
+//GameList.java
 package com.str.game;
 
 public class GameList {
