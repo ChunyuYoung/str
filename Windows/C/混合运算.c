@@ -1,7 +1,0 @@
-#include<stdio.h>
-int main(void)
-{
-	int a=12;
-	printf("%d",a+=a-=a*a);
-	return 0;
-}

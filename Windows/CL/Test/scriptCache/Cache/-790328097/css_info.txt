@@ -1,2 +1,0 @@
-4.0.30319.42000
-F:\work\Project\Source\Repos\str\Windows\CL\Test\scriptCache\dynamic
