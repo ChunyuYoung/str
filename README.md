@@ -13,7 +13,7 @@
 ## 参考截图
 
 * ![主界面](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/menu.jpg)
-* ![载具](https://github.com/TianruiShi/str/tree/master/Code/else/GTA5/motor truck.jpg)
+* ![载具](https://github.com/TianruiShi/str/tree/master/Code/else/GTA5/motor_truck.jpg)
 * ![武器](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/weapon.jpg)
 * ![玩家](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/player.jpg)
 
