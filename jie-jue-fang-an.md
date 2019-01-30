@@ -359,7 +359,7 @@ nox_adb devices
 adb connect 127.0.0.1:62001
 adb devices
 ```
-# 下载XX99网页小游戏
+## 下载XX99网页小游戏
 1. F12-->NetWork-->过滤SWF-->查找过滤之后最有可能的主程序文件.swf
 2. 使用浏览器运行小游戏,编写html代码
 ``` html
