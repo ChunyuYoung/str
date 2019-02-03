@@ -12,12 +12,10 @@
 
 ## 参考截图
 
-*图片上传非常慢,就用外链吧!*
-* [主界面](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/menu.jpg)
-* [载具](https://github.com/TianruiShi/str/tree/master/Code/else/GTA5/motor_truck.jpg)
-* [武器](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/weapon.jpg)
-* [玩家](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/player.jpg)
+* ![主界面](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/menu.jpg)
+* ![载具](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/motor_truck.jpg)
+* ![武器](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/weapon.jpg)
+* ![玩家](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/player.jpg)
 
 ***
-* [GTA5内置修改器中文简体汉化版1.43](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/GTA5%E5%86%85%E7%BD%AE%E4%BF%AE%E6%94%B9%E5%99%A81.43%E6%B1%89%E5%8C%96%E7%89%88.7z)
-* [GitHub](https://github.com/TianruiShi/str/blob/master/README.md)
+[GTA5内置修改器中文简体汉化版1.43](https://github.com/TianruiShi/str/blob/master/Code/else/GTA5/GTA5%E5%86%85%E7%BD%AE%E4%BF%AE%E6%94%B9%E5%99%A81.43%E6%B1%89%E5%8C%96%E7%89%88.7z)
