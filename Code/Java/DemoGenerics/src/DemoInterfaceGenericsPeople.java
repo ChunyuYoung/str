@@ -1,4 +1,3 @@
-package PACKAGE_NAME;
-
-public class DemoInterfaceGenericsPeople {
+interface People<peopleName>{
+    void setName(peopleName name);
 }
