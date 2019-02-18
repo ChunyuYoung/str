@@ -377,3 +377,13 @@ adb devices
 ```
 * 保存并运行
 ***
+## Notepad++单词和文字下面红色波浪线
+* 插件-->DSpellCheck-->Spell Check Document Automatically
+***
+## IDEA 在同时使用一个以上JDK的版本问题
+1. JDK1.6 不支持C格式,例如`System.out.printf("%3d",value);`
+2. JDK1.10 不在支持`sun.jdbc.odbc.JdbcOdbcDriver`
+3. 如果在IDEA中安装了两个版本的JDK,例如`JDK1.6`和`JDK1.10`
+	* 如果默认JDK版本为`1.10`,则需要每次设置默认的JDK版本
+	* 如果主要JDK版本为`1.10`,则需要每次在编译`Project`右键`Open Moudle Settings`**-->**`Project`**-->**`Project SDK`**切换JDK版本**.
+***
