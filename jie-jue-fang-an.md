@@ -387,3 +387,23 @@ adb devices
 	* 如果默认JDK版本为`1.10`,则需要每次设置默认的JDK版本
 	* 如果主要JDK版本为`1.10`,则需要每次在编译`Project`右键`Open Moudle Settings`**-->**`Project`**-->**`Project SDK`**切换JDK版本**.
 ***
+## AndroidStudio Failed to resolve:com.android.support
+1. 查看AndroidSDK版本-->Settings-->Appearance & Behavior-->System Settings-->Updates-->AndroidSDK Tools
+2. Settings-->Appearance & Behavior-->AndroidSDK-->SDK Tools-->查看Android SDK Build-Tools版本是否和AndroidSDK Tools版本一致
+3. Project-->Grade Script-->build.gradle-->修改comileSdkVersion和targetSdkVersion和compile修改为AndroidSDK Tools的版本号
+4. Ctrl+S-->Try Again
+***
+## AndroidStudio Error running app: Instant Run requires 'Tools | Android | Enable ADB integration' to be enabled.
+* Tools-->Android-->Enable ADB Integration
+***
+## AndroidStudio 显示行号/show line number
+* Settings-->Editor-->General-->Appearance-->勾选show line numbers
+***
+## IDEA 中文乱码
+* File-->Settings-->Editor-->File Encodings
+	* Glodbal Encoding: GBK
+	* Project Encoding: GBK
+	* 添加当前工程路径,并设置编码
+	* Default encoding for properties files: <System Default>
+	* BOM for new UTF-8 files-->Create UTF-8 files:with NO BOM
+***
