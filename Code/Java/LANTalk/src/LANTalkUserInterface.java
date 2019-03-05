@@ -138,6 +138,8 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         downPanel.setLayout(new FlowLayout());
         downPanel.add(new Label("待添加底部菜单"));
 
+        //测试:调试信息
+
     }
 
     public void actionPerformed(ActionEvent e){
