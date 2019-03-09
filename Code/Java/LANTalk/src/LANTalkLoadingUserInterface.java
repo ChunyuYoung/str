@@ -53,7 +53,12 @@ public class LANTalkLoadingUserInterface extends JFrame implements Runnable{
             }
             setTitle("正在加载:"+n*5+"%");
         }
-        new LANTalkUserInterface();
+
+        //如果这里匿名实例化对象,就不能刷新被调用窗口的布局,就会导致界面可能出现什么都没有
+        LANTalkUserInterface lanTalkUserInterface = new LANTalkUserInterface();
+        lanTalkUserInterface.validate();
+
+        //当被调用的窗口启动时隐藏当前界面
         setVisible(false);
     }
 }

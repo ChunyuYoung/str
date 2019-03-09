@@ -141,7 +141,7 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         //测试:调试信息
 
     }
-
+    //事件源处理
     public void actionPerformed(ActionEvent e){
 
     }

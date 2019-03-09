@@ -31,7 +31,7 @@ public class LANTalkRegisterWindowGUI extends JFrame implements ActionListener{
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-        setResizable(false);    //固定边界
+        setResizable(true);    //固定边界
         validate();     //刷新布局
 
         //初始化面板对象

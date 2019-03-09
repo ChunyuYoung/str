@@ -115,8 +115,10 @@ public class LANTalkLoginWindowGUI extends JFrame implements ActionListener{
                     JOptionPane.showMessageDialog(this,"登陆成功","信息",JOptionPane.INFORMATION_MESSAGE);
                     //隐藏窗体
                     setVisible(false);
+                    
                     //跳转界面
-                    new LANTalkLoadingUserInterface();
+                    LANTalkLoadingUserInterface lanTalkLoadingUserInterface = new LANTalkLoadingUserInterface();
+                    lanTalkLoadingUserInterface.validate();     //刷新布局
                 }
             }
         }
