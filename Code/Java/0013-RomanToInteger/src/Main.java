@@ -1,12 +1,13 @@
+
 public class Main {
-    public static void main(String args[]){
-        Answer answer = new Answer();
-        System.out.println(answer.charInteger('I'));
-        System.out.println(answer.charInteger('V'));
-        System.out.println(answer.charInteger('X'));
-        System.out.println(answer.charInteger('L'));
-        System.out.println(answer.charInteger('C'));
-        System.out.println(answer.charInteger('D'));
-        System.out.println(answer.charInteger('M'));
-    }
+	public static void main(String args[]){
+		Answer ans = new Answer();
+		System.out.println("I:"+ans.GetCharToInteger('I'));
+		System.out.println("V:"+ans.GetCharToInteger('V'));
+		System.out.println("X:"+ans.GetCharToInteger('X'));
+		System.out.println("L:"+ans.GetCharToInteger('L'));
+		System.out.println("C:"+ans.GetCharToInteger('C'));
+		System.out.println("D:"+ans.GetCharToInteger('D'));
+		System.out.println("M:"+ans.GetCharToInteger('M'));
+	}
 }

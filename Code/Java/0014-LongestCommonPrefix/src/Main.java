@@ -1,12 +1,18 @@
+
 public class Main {
-    public static void main(String args[]){
-        Answer answer = new Answer();
-        String s1[] = {"str","shitianrui"};
-        System.out.println(answer.strSubString(s1));
-    }
+	public static void main(String args[]){
+		Answer ans = new Answer();
+		String s1[] = {"str","sstr","ssstr"}; 
+		String s2[] = {"shitianrui","str"};
+		String s3[] = {"flow","flo","fl"};
+		String s4[] = {"sssttr","str","s13"};
+		String s5[] = {};
+		String s6[] = {"str"};
+		System.out.println(ans.GetIntegerSubString(s1));
+		System.out.println(ans.GetIntegerSubString(s2));
+		System.out.println(ans.GetIntegerSubString(s3));
+		System.out.println(ans.GetIntegerSubString(s4));
+		System.out.println(ans.GetIntegerSubString(s5));
+		System.out.println(ans.GetIntegerSubString(s6));
+	}
 }
-/*
-题目
-编写一个函数来查找字符串数组中的最长公共前缀。
-如果不存在公共前缀，返回空字符串 ""。
- */
