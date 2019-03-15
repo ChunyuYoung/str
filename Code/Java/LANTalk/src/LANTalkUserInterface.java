@@ -5,20 +5,9 @@ import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
+import javax.swing.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.concurrent.Flow;
 
 public class LANTalkUserInterface extends JFrame implements ActionListener{
     //声明控件对象
@@ -31,13 +20,11 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
     JLabel imageFaceLabel;
     ImageIcon imageFace;
     JTextField search;
-    InetAddress inetAddress;
-    FlowLayout flowLayout;
-    BorderLayout borderLayout;
     GridLayout gridLayout;
-    Thread thread;      //监测非法调整布局尺寸
     //声明变量
     String str[] = {"日间主题","夜间主题"};
+    //声明IP地址和域名
+    String LANName,LANIp;
 
     public LANTalkUserInterface(){
         //初始化窗体参数
@@ -48,7 +35,7 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);    //固定边界
-        validate();         //刷新布局
+        validate();             //刷新布局
 
         //初始化面板对象
         JPanel panel = new JPanel(new GridLayout(4,1));
@@ -72,41 +59,21 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         //编辑框
         search = new JTextField(25);
 
-        String str = "",strIP="",strName="";    //获取本地域名和IP,IP地址,本机域名
-        int number = 0;
+        //获取本地IP及域名
         try{
-            inetAddress = InetAddress.getLocalHost();       //获取本机域名和IP地址
-            str = inetAddress.toString();
-
-            //字符串中/第一次出现的位置
-            ArrayList<String> s = new ArrayList<>();
-            boolean b = true;
-            while(b){
-                number = str.indexOf("/");
-                if (number != 0)
-                    b = false;
-            }
-//            System.out.println(number);     //输出/首次出现的位置
+            //实例化客户端IP地址和域名字符串的分解实例
+            LANTalkGetLocalHost lanTalkGetLocalHost = new LANTalkGetLocalHost(InetAddress.getLocalHost().toString());
+            LANIp = lanTalkGetLocalHost.getStrIP();
+            LANName = lanTalkGetLocalHost.getStrNmae();
         }
         catch (UnknownHostException e){
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,"无法获取本地IP地址","错误",JOptionPane.ERROR_MESSAGE);
         }
 
-        //截取IP地址
-        char chIP[] = str.toCharArray();
-        //因为截取字符串时会截取被截取字符之前,所以在这里必须要+1是为了让程序截取被截取字符之后,长度减一保证不会抛出数组月季的异常
-        strIP = String.valueOf(chIP,number+1,str.length()-number-1);
-//        System.out.println(strIP);      //验证截取到的IP地址
-
-        //截取本地域名
-        char chHostName[] = str.toCharArray();
-        strName = String.valueOf(chHostName,0,number);
-//        System.out.println(strName);       //验证截取到的本地域名
-
         //Name标签赋值
-        name.setText("IP:"+strIP);
+        name.setText("IP:"+LANIp);
         //personalInformation标签赋值
-        personalInformation.setText("Name:"+strName);
+        personalInformation.setText("Name:"+LANName);
 
 
         //添加面板到布局

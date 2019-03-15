@@ -6,8 +6,8 @@ public class LANTalkMain {
         //调试:直接加载用户界面
 //        LANTalkUserInterface win = new LANTalkUserInterface();
 
-        //调试:直接加载服务器端
-        LANTalkServerWindowGUI win = new LANTalkServerWindowGUI();
-        win.validate();     //刷新实例化对象的布局
+//        //调试:直接加载服务器端
+//        LANTalkServerWindowGUI server = new LANTalkServerWindowGUI();
+//        server.validate();     //刷新实例化对象的布局
     }
 }
