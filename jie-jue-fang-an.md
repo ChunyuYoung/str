@@ -407,3 +407,8 @@ adb devices
 	* Default encoding for properties files: <System Default>
 	* BOM for new UTF-8 files-->Create UTF-8 files:with NO BOM
 ***
+## Eclipse打开IDEA导出的Eclipse工程乱码
+* Window-->Preference-->General-->Workspace-->Text file encoding-->Other-->UTF-8
+* 如果选中Workspace没有找到编码**Text file encoding**则选中当前工程在操作
+* 显示所有中文的编码方式主要是GBK和UTF-8,UTF-8是国际通用的中文编码标准
+***

@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import java.awt.*;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -19,17 +19,24 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-public class LANTalkServerWindowGUI extends JFrame implements ActionListener,Runnable {
+public class LANTalkServerWindowGUI extends JFrame implements ActionListener,Runnable{
+
     //声明控件对象
-    JButton enter,close;
-    JTextField txt;
-    JTextArea text;
-    Box box;
-    JMenuBar menuBar;
-    JMenu addFriend;
-    JMenuItem ip,portSend,portRevice;
+    public JButton enter,close;
+    public JTextField txt;
+    public JTextArea text;
+    public Box box;
+    public JMenuBar menuBar;
+    public JMenu addFriend;
+    public JMenuItem ip,portSend,portRevice;
+    JPanel panel;
     String strIP;
+
+    //声明发送端口和接收端口
     int strSendPort,strRevicePort;
+
+    //主题色
+    boolean subthem;
     public LANTalkServerWindowGUI(){
         //初始化窗体默人参数
         setSize(300,310);
@@ -40,7 +47,7 @@ public class LANTalkServerWindowGUI extends JFrame implements ActionListener,Run
         catch (UnknownHostException e){
             JOptionPane.showMessageDialog(this,"IP地址不合法","错误",JOptionPane.ERROR_MESSAGE);
         }
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setLocationRelativeTo(null);
         //显示窗口
         setVisible(true);
@@ -65,7 +72,7 @@ public class LANTalkServerWindowGUI extends JFrame implements ActionListener,Run
         getContentPane().add(box);
         box.add(new JScrollPane(text));
         box.add(txt);
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.add(enter);
         panel.add(close);
         box.add(panel);
@@ -89,10 +96,65 @@ public class LANTalkServerWindowGUI extends JFrame implements ActionListener,Run
         //启动接收信息线程
         Thread thread = new Thread(this);
         thread.start();
+
+        //调用LANTalkUserInterface成员常量subTheme,false为浅色,true为深色
+        subthem = LANTalkUserInterface.subTheme;
+        //深色主题
+        if (subthem){
+            //enter,close,txt,text,box,menuBar,addFriend,ip,portSend,portRevice,panel
+            enter.setBackground(new Color(22,22,22));
+            enter.setForeground(Color.GREEN);
+            close.setBackground(new Color(22,22,22));
+            close.setForeground(Color.GREEN);
+            txt.setBackground(new Color(22,22,22));
+            txt.setForeground(Color.GREEN);
+            text.setBackground(new Color(22,22,22));
+            text.setForeground(Color.GREEN);
+            box.setBackground(new Color(22,22,22));
+            menuBar.setBackground(new Color(22,22,22));
+            addFriend.setBackground(new Color(22,22,22));
+            addFriend.setForeground(Color.GREEN);
+            ip.setBackground(new Color(22,22,22));
+            ip.setForeground(Color.GREEN);
+            portSend.setBackground(new Color(22,22,22));
+            portSend.setForeground(Color.GREEN);
+            portRevice.setBackground(new Color(22,22,22));
+            portRevice.setForeground(Color.GREEN);
+            panel.setBackground(new Color(22,22,22));
+        }
+        //浅色主题
+        if (subthem != true){
+            //enter,close,txt,text,box,menuBar,addFriend,ip,portSend,portRevice,panel
+            enter.setBackground(Color.white);
+            enter.setForeground(Color.black);
+            close.setBackground(Color.white);
+            close.setForeground(Color.black);
+            txt.setBackground(Color.white);
+            txt.setForeground(Color.black);
+            text.setBackground(Color.white);
+            text.setForeground(Color.black);
+            box.setBackground(Color.white);
+            menuBar.setBackground(Color.white);
+            addFriend.setBackground(Color.white);
+            addFriend.setForeground(Color.black);
+            ip.setBackground(Color.white);
+            ip.setForeground(Color.black);
+            portSend.setBackground(Color.white);
+            portSend.setForeground(Color.black);
+            portRevice.setBackground(Color.white);
+            portRevice.setForeground(Color.black);
+            panel.setBackground(Color.white);
+            panel.setForeground(Color.black);
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        //如果关闭按钮发生事件
+        if (e.getSource().equals(close)){
+
+        }
+
         //如果发送按钮发生事件
         if (e.getSource().equals(enter)){
             //获取文本数据

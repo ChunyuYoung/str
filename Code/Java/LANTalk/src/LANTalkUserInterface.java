@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -14,37 +15,53 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 public class LANTalkUserInterface extends JFrame implements ActionListener{
 
     //声明控件对象
-    JMenuBar menuBar;
-    JMenu menu;
-    JMenuItem menuItem;
     JLabel name;
     JLabel personalInformation;
     JLabel onlineDate;
     JLabel imageFaceLabel;
     ImageIcon imageFace;
     JTextField search;
-    GridLayout gridLayout;
+    //菜单栏
+    JMenuBar ThemeMenuBar;
+    JMenu Theme;
+    JMenuItem light;
+    JMenuItem dark;
+    //面板
+    JPanel panel1,panel1_1,panel2,panel2_2,panel3,panel4,panel4_1;
 
     //声明变量
     String str[] = {"日间主题","夜间主题"};
+
     //声明IP地址和域名
     String LANName,LANIp;
 
+    //声明添加的IP和设置的端口
+    String strIp;
+    int port;
+
     //盒式布局
     Box box;
+
     //添加IP和设置端口
     JButton addIp,setPort,enterAdd;
 
     //测试好友
     JButton testServer = new JButton("Test:   LANTalkClientWindowGUI"),
             testClient = new JButton("Test:   LANTalkServerWindowGUI");
+
+    //声明子主题全局静态常量
+    public static boolean subTheme = false;       //浅色主题
+
+    boolean backColor = false;
 
     public LANTalkUserInterface(){
 
@@ -59,10 +76,6 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         validate();             //刷新布局
 
         //初始化控件对象
-        //菜单条
-        menuBar = new JMenuBar();
-        menu = new JMenu();
-        menuItem = new JMenuItem();
         //标签
         name = new JLabel("本机IP");
         personalInformation = new JLabel("本机域名");
@@ -79,6 +92,17 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         //确认添加好友
         enterAdd = new JButton("Enter");
 
+        //菜单栏
+        ThemeMenuBar = new JMenuBar();
+        //主题
+        Theme = new JMenu("主题");
+        light = new JMenuItem("浅色");
+        dark = new JMenuItem("深色");
+        setJMenuBar(ThemeMenuBar);
+        ThemeMenuBar.add(Theme);
+        Theme.add(light);
+        Theme.add(dark);
+
         //获取本地IP及域名
         try{
             //实例化客户端IP地址和域名字符串的分解实例
@@ -90,30 +114,36 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
             JOptionPane.showMessageDialog(this,"无法获取本地IP地址","错误",JOptionPane.ERROR_MESSAGE);
         }
 
+        //获取分解IP和域名
+        name.setText(LANIp);
+        personalInformation.setText(LANName);
+
         //初始化盒式布局
         box = Box.createVerticalBox();
         getContentPane().add(box);
-        JPanel panel1 = new JPanel(new GridLayout(1,2));
+        panel1 = new JPanel(new GridLayout(1,2));
         box.add(panel1);
         panel1.add(imageFaceLabel);
-        JPanel panel1_1 = new JPanel(new GridLayout(2,1));
+        panel1_1 = new JPanel(new GridLayout(2,1));
         panel1.add(panel1_1);
-        panel1_1.add(new JLabel(LANName));
-        panel1_1.add(new JLabel(LANIp));
-        JPanel panel2 = new JPanel(new BorderLayout());
-        JPanel panel2_2 = new JPanel(new FlowLayout());
+//        panel1_1.add(new JLabel(LANName));
+//        panel1_1.add(new JLabel(LANIp));
+        panel1_1.add(name);
+        panel1_1.add(personalInformation);
+        panel2 = new JPanel(new BorderLayout());
+        panel2_2 = new JPanel(new FlowLayout());
         box.add(panel2);
         panel2.add(panel2_2);
         panel2_2.add(search);
-        JPanel panel3 = new JPanel(new FlowLayout());
+        panel3 = new JPanel(new FlowLayout());
         box.add(panel3);
         panel3.add(addIp);
         panel3.add(setPort);
         panel3.add(enterAdd);
-        JPanel panel4 = new JPanel(new GridLayout());
+        panel4 = new JPanel(new GridLayout());
         box.add(panel4);
         panel4.add(testClient);
-        JPanel panel4_1 = new JPanel(new GridLayout());
+        panel4_1 = new JPanel(new GridLayout());
         box.add(panel4_1);
         panel4_1.add(testServer);
 
@@ -123,9 +153,100 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         addIp.addActionListener(this);
         setPort.addActionListener(this);
         enterAdd.addActionListener(this);
+        dark.addActionListener(this);
+        light.addActionListener(this);
+
     }
     //事件源处理
     public void actionPerformed(ActionEvent e){
+
+        //深色的主题
+        if (e.getSource().equals(dark)){
+            //panel1,panel1_1,panel2,panel2_2,panel3,panel4,panel4_1;
+            panel1.setBackground(new Color(22,22,22));
+            panel1_1.setBackground(new Color(22,22,22));
+            panel2.setBackground(new Color(22,22,22));
+            panel2_2.setBackground(new Color(22,22,22));
+            panel3.setBackground(new Color(22,22,22));
+            panel4.setBackground(new Color(22,22,22));
+            panel4_1.setBackground(new Color(22,22,22));
+            //search,name,personalInformation,ThemeMenuBar,Theme,light,dark
+            search.setBackground(new Color(22,22,22));
+            search.setForeground(Color.GREEN);
+            name.setForeground(Color.GREEN);
+            personalInformation.setForeground(Color.GREEN);
+            ThemeMenuBar.setBackground(new Color(22,22,22));
+            Theme.setForeground(Color.GREEN);
+            light.setForeground(Color.GREEN);
+            light.setBackground(new Color(22,22,22));
+            dark.setForeground(Color.GREEN);
+            dark.setBackground(new Color(22,22,22));
+            //AddIp,SetPort,enterAdd,testServer,testClient
+            addIp.setBackground(new Color(22,22,22));
+            addIp.setForeground(Color.GREEN);
+            setPort.setBackground(new Color(22,22,22));
+            setPort.setForeground(Color.GREEN);
+            enterAdd.setBackground(new Color(22,22,22));
+            enterAdd.setForeground(Color.GREEN);
+            testServer.setBackground(new Color(22,22,22));
+            testServer.setForeground(Color.GREEN);
+            testClient.setBackground(new Color(22,22,22));
+            testClient.setForeground(Color.GREEN);
+
+            //深色主题
+            subTheme = true;
+        }
+
+        //浅色主题
+        if (e.getSource().equals(light)){
+            //panel1,panel1_1,panel2,panel2_2,panel3,panel4,panel4_1;
+            panel1.setBackground(Color.white);
+            panel1_1.setBackground(Color.white);
+            panel2.setBackground(Color.white);
+            panel2_2.setBackground(Color.white);
+            panel3.setBackground(Color.white);
+            panel4.setBackground(Color.white);
+            panel4_1.setBackground(Color.white);
+            //search,name,personalInformation,ThemeMenuBar,Theme,light,dark
+            search.setBackground(Color.white);
+            search.setForeground(Color.black);
+            name.setBackground(Color.white);
+            name.setForeground(Color.black);
+            personalInformation.setBackground(Color.white);
+            personalInformation.setForeground(Color.black);
+            ThemeMenuBar.setBackground(Color.white);
+            Theme.setForeground(Color.black);
+            light.setBackground(Color.white);
+            light.setForeground(Color.black);
+            dark.setBackground(Color.white);
+            dark.setForeground(Color.black);
+            //AddIp,SetPort,enterAdd,testServer,testClient
+            addIp.setBackground(Color.white);
+            addIp.setForeground(Color.black);
+            setPort.setBackground(Color.white);
+            setPort.setForeground(Color.black);
+            enterAdd.setBackground(Color.white);
+            enterAdd.setForeground(Color.black);
+            testServer.setBackground(Color.white);
+            testServer.setForeground(Color.black);
+            testClient.setBackground(Color.white);
+            testClient.setForeground(Color.black);
+
+            //浅色主题
+            subTheme = false;
+        }
+
+        //添加用户到列表
+        if (e.getSource().equals(enterAdd)){
+            //创建用户列表
+            File file = new File("UsersList.txt");
+            try{
+                Scanner scanner = new Scanner(file);
+            }
+            catch (FileNotFoundException e1){
+                JOptionPane.showMessageDialog(this,"找不到UsersList.txt","错误",JOptionPane.ERROR_MESSAGE);
+            }
+        }
 
         //测试服务器
         if (e.getSource().equals(testClient))
@@ -138,8 +259,7 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         //添加好友
         if (e.getSource().equals(addIp)){
             //获取输入的IP地址
-            //未使用
-            String strIp = JOptionPane.showInputDialog(this,"请输入要添加的IP地址","信息:添加好友",JOptionPane.PLAIN_MESSAGE);
+            strIp = JOptionPane.showInputDialog(this,"请输入要添加的IP地址","信息:添加好友",JOptionPane.PLAIN_MESSAGE);
         }
 
         //设置端口
@@ -147,8 +267,7 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
             //设置端口
             String strPort = JOptionPane.showInputDialog(this,"请输入要设置的端口号(1024-65535)","信息:设置端口",JOptionPane.PLAIN_MESSAGE);
             try{
-                //未使用
-                int port = Integer.valueOf(strPort);
+                port = Integer.valueOf(strPort);
             }
             catch (NumberFormatException e1){
                 JOptionPane.showMessageDialog(this,"端口号不能为空","错误",JOptionPane.ERROR_MESSAGE);
