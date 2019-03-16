@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Create-By: KuuHaKuuMiKu
+Sealed: true
+Name: /
+Class-Path: .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;
+Main-Class: LANTalkMain
+
