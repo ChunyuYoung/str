@@ -1,5 +1,10 @@
-import java.util.ArrayList;
-
+/*
+如果被LANTalkServerWindowGUI和LANTalkClientWindowGUI调用则会发生异常
+异常信息:套接字无法绑定端口
+猜测:应该是IP地址回传的问题,但是用输出函数测试没问题
+目前LANTalkGetLocalHost.getStrIp()被InetAddress.getLocalHost().getHostAddress()所代替
+此类仍被LANTalkUserInterface所使用
+ */
 public class LANTalkGetLocalHost {
 
     //如果直接给字符串赋值为""或者null会直接导致传参的变量被覆盖,导致程序抛出异常

@@ -1,5 +1,15 @@
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -8,127 +18,175 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
-import javax.swing.Box;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 
-public class LANTalkServerWindowGUI extends JFrame implements ActionListener,Runnable{
-    JLabel splitLine;
-    JTextArea text;
+public class LANTalkServerWindowGUI extends JFrame implements ActionListener,Runnable {
+    //声明控件对象
+    JButton enter,close;
     JTextField txt;
-    JButton Enter,Close;
+    JTextArea text;
     Box box;
-    String LANName,LANIp;
-
+    JMenuBar menuBar;
+    JMenu addFriend;
+    JMenuItem ip,portSend,portRevice;
+    String strIP;
+    int strSendPort,strRevicePort;
     public LANTalkServerWindowGUI(){
-        //窗口标题为获取对方的IP
-        setVisible(true);
-        setSize(300,250);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout());
-        validate();             //刷新边界
-        setResizable(false);     //固定边界
-
-        //初始化控件对象
-        text = new JTextArea(5,20);
-        splitLine = new JLabel("LANTalk");
-//        splitLine.setBackground(new Color(22,22,22));
-        txt = new JTextField();
-        Enter = new JButton("发送");
-        Close = new JButton("关闭");
-
-        //初始化面板
-        box = Box.createVerticalBox();
-        box.add(new JScrollPane(text));
-        box.add(splitLine);
-        box.add(new JScrollPane(txt),BorderLayout.CENTER);
-        JPanel panel = new JPanel(new FlowLayout());
-        box.add(panel);
-        panel.add(Enter);
-        panel.add(Close);
-
-        //添加面板到容器
-        getContentPane().add(box);
-
-        //服务器和客户端将采用Server/Client Mode
+        //初始化窗体默人参数
+        setSize(300,310);
         try{
-            //实例化客户端IP地址和域名字符串分解实例
-            LANTalkGetLocalHost lanTalkGetLocalHost = new LANTalkGetLocalHost(InetAddress.getLocalHost().toString());
-            LANIp = lanTalkGetLocalHost.getStrIP();
-            LANName = lanTalkGetLocalHost.getStrNmae();
+            //设置窗口标题为本机IP地址
+            setTitle(InetAddress.getLocalHost().getHostAddress());
         }
         catch (UnknownHostException e){
-            JOptionPane.showMessageDialog(this,"无法获取到本地IP地址","错误",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,"IP地址不合法","错误",JOptionPane.ERROR_MESSAGE);
         }
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        //显示窗口
+        setVisible(true);
+        //固定边界
+        setResizable(false);
+        //刷新布局
+        validate();
 
-        //设置当前用户标题名称为本机IP地址
-        setTitle(LANIp);
+        //初始化控件对象
+        enter = new JButton("发送");
+        txt = new JTextField(20);
+        text = new JTextArea(10,20);
+        close = new JButton("关闭");
+        menuBar = new JMenuBar();
+        addFriend = new JMenu("好友");
+        ip = new JMenuItem("设置IP");
+        portSend = new JMenuItem("设置发送端口");
+        portRevice = new JMenuItem("设置接收端口");
 
-        //绑定监听对象
-        Enter.addActionListener(this);
-        Close.addActionListener(this);
+        //初始化窗体布局
+        box = Box.createVerticalBox();
+        getContentPane().add(box);
+        box.add(new JScrollPane(text));
+        box.add(txt);
+        JPanel panel = new JPanel();
+        panel.add(enter);
+        panel.add(close);
+        box.add(panel);
 
-        //启动线程
+        //添加菜单条
+        setJMenuBar(menuBar);
+        //添加菜单
+        menuBar.add(addFriend);
+        //添加菜单项
+        addFriend.add(ip);
+        addFriend.add(portSend);
+        addFriend.add(portRevice);
+
+        //绑定监听事件
+        enter.addActionListener(this);
+        close.addActionListener(this);
+        ip.addActionListener(this);
+        portSend.addActionListener(this);
+        portRevice.addActionListener(this);
+
+        //启动接收信息线程
         Thread thread = new Thread(this);
         thread.start();
     }
 
-    public void actionPerformed(ActionEvent e){
-        byte[] info = txt.getText().trim().getBytes();
-        try{
-            InetAddress address = InetAddress.getByName(LANIp);
-            DatagramPacket datagramPacket = new DatagramPacket(info,info.length,address,5418);
-            DatagramSocket datagramSocket = new DatagramSocket();
-            datagramSocket.send(datagramPacket);
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //如果发送按钮发生事件
+        if (e.getSource().equals(enter)){
+            //获取文本数据
+            byte[] info = txt.getText().trim().getBytes();
+            try{
+                String HostIp = InetAddress.getLocalHost().getHostAddress();
+//                InetAddress inetAddress = InetAddress.getByName(InetAddress.getLocalHost().getHostAddress());
+                //如果默认IP被修改则重新赋值
+                if (strIP != null)
+                    HostIp = strIP;
+                InetAddress inetAddress = InetAddress.getByName(HostIp);
+                //创建待发送的数据包
+                DatagramPacket datagramPacket = new DatagramPacket(info,info.length,inetAddress,2333);
+                DatagramSocket socket = new DatagramSocket();
+                //发送数据包
+                socket.send(datagramPacket);
+            }
+            catch (UnknownHostException e1){
+                JOptionPane.showMessageDialog(this,"IP地址不合法","错误",JOptionPane.ERROR_MESSAGE);
+            }
+            catch (SocketException e1){
+                JOptionPane.showMessageDialog(this,"套接字不能被打开，或不能将其绑定到指定的本地端口","错误",JOptionPane.ERROR_MESSAGE);
+            }
+            catch (IOException e1){
+                JOptionPane.showMessageDialog(this,"消息发送失败","错误",JOptionPane.ERROR_MESSAGE);
+            }
+            //清除文本框
+            txt.setText(null);
         }
-        catch (UnknownHostException e1){
-            JOptionPane.showMessageDialog(this,"找不到IP地址","错误",JOptionPane.ERROR_MESSAGE);
+
+        //添加IP
+        if (e.getSource().equals(ip)){
+            strIP = JOptionPane.showInputDialog(this,"请输入IP地址","信息:",JOptionPane.PLAIN_MESSAGE);
         }
-        catch (SocketException e1){
-            JOptionPane.showMessageDialog(this,"发送数据包实例化对象发生异常","错误",JOptionPane.ERROR_MESSAGE);
+
+        //添加发送端口
+        if (e.getSource().equals(portSend)){
+            String port = JOptionPane.showInputDialog(this,"请输入端口:1024-65535","信息",JOptionPane.PLAIN_MESSAGE);
+            try{
+                strSendPort = Integer.valueOf(port);
+            }
+            catch (NumberFormatException e1){
+                JOptionPane.showMessageDialog(this,"端口号不能为空","错误",JOptionPane.ERROR_MESSAGE);
+            }
         }
-        catch (IOException e1){
-            JOptionPane.showMessageDialog(this,"数据报发送失败","错误",JOptionPane.ERROR_MESSAGE);
+
+        //添加接收端口
+        if (e.getSource().equals(portRevice)){
+            String port = JOptionPane.showInputDialog(this,"请输入接收端口:1024-65535","信息",JOptionPane.PLAIN_MESSAGE);
+            try{
+                strRevicePort = Integer.valueOf(port);
+            }
+            catch (NumberFormatException e1){
+                JOptionPane.showMessageDialog(this,"端口不能为空","错误",JOptionPane.ERROR_MESSAGE);
+            }
         }
-        txt.setText(null);
     }
 
-    public void run(){
-        DatagramPacket pack = null;
+    //接收信息线程
+    @Override
+    public void run() {
+        DatagramPacket packet = null;
         DatagramSocket socket = null;
-        byte[] data = new byte[8192];   //最大长度
+        //最大长度
+        byte data[] = new byte[8192];
         try{
-            pack = new DatagramPacket(data,data.length);
-            socket = new DatagramSocket(2333);
+            //创建接收数据包
+            packet = new DatagramPacket(data,data.length);
+            socket = new DatagramSocket(5418);
         }
         catch (SocketException e){
-            JOptionPane.showMessageDialog(this,"端口不合法或被占用","错误",JOptionPane.ERROR_MESSAGE);
-//            e.printStackTrace();
+            JOptionPane.showMessageDialog(this,"端口不合法","错误",JOptionPane.ERROR_MESSAGE);
         }
         while (true){
+            //如果socket没有被实例化
             if (socket == null)
                 break;
             else {
                 try{
-                    socket.receive(pack);
-                    String str = new String(pack.getData(),0,pack.getLength());
-                    text.append("\n"+str);
+                    //接收数据包
+                    socket.receive(packet);
+                    String message = new String(packet.getData(),0,packet.getLength());
+                    text.append("\n"+message+"\n");
                 }
-                catch (IOException e){
-                    JOptionPane.showMessageDialog(this,"信息接收失败","错误",JOptionPane.ERROR_MESSAGE);
+                catch (IOException e1){
+                    JOptionPane.showMessageDialog(this,"接收信息失败","错误",JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
     }
-    public static void main(String args[]){
-        LANTalkServerWindowGUI main = new LANTalkServerWindowGUI();
-        main.validate();
-    }
+
+//    //调试:直接运行当前窗口
+//    public static void main(String args[]){
+//        LANTalkServerWindowGUI main = new LANTalkServerWindowGUI();
+//        main.validate();
+//    }
 }
