@@ -4,7 +4,7 @@ public class LANTalkMain {
 //        LANTalkLoginWindowGUI win = new LANTalkLoginWindowGUI();
 //        win.validate();
 
-        //调试:直接加载用户界面
+//        //调试:直接加载用户界面
         LANTalkUserInterface win = new LANTalkUserInterface();
         win.validate();
 

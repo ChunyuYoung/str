@@ -38,9 +38,6 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
     //面板
     JPanel panel1,panel1_1,panel2,panel2_2,panel3,panel4,panel4_1;
 
-    //声明变量
-    String str[] = {"日间主题","夜间主题"};
-
     //声明IP地址和域名
     String LANName,LANIp;
 
@@ -156,6 +153,41 @@ public class LANTalkUserInterface extends JFrame implements ActionListener{
         dark.addActionListener(this);
         light.addActionListener(this);
 
+        //默认浅色主题
+        if (getContentPane().getBackground() != Color.white){
+            //panel1,panel1_1,panel2,panel2_2,panel3,panel4,panel4_1;
+            panel1.setBackground(Color.white);
+            panel1_1.setBackground(Color.white);
+            panel2.setBackground(Color.white);
+            panel2_2.setBackground(Color.white);
+            panel3.setBackground(Color.white);
+            panel4.setBackground(Color.white);
+            panel4_1.setBackground(Color.white);
+            //search,name,personalInformation,ThemeMenuBar,Theme,light,dark
+            search.setBackground(Color.white);
+            search.setForeground(Color.black);
+            name.setBackground(Color.white);
+            name.setForeground(Color.black);
+            personalInformation.setBackground(Color.white);
+            personalInformation.setForeground(Color.black);
+            ThemeMenuBar.setBackground(Color.white);
+            Theme.setForeground(Color.black);
+            light.setBackground(Color.white);
+            light.setForeground(Color.black);
+            dark.setBackground(Color.white);
+            dark.setForeground(Color.black);
+            //AddIp,SetPort,enterAdd,testServer,testClient
+            addIp.setBackground(Color.white);
+            addIp.setForeground(Color.black);
+            setPort.setBackground(Color.white);
+            setPort.setForeground(Color.black);
+            enterAdd.setBackground(Color.white);
+            enterAdd.setForeground(Color.black);
+            testServer.setBackground(Color.white);
+            testServer.setForeground(Color.black);
+            testClient.setBackground(Color.white);
+            testClient.setForeground(Color.black);
+        }
     }
     //事件源处理
     public void actionPerformed(ActionEvent e){

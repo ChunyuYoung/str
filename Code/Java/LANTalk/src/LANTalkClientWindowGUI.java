@@ -18,6 +18,9 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class LANTalkClientWindowGUI extends JFrame implements ActionListener,Runnable {
     //声明控件对象
@@ -29,8 +32,14 @@ public class LANTalkClientWindowGUI extends JFrame implements ActionListener,Run
     JMenu addFriend;
     JMenuItem ip,portSend,portRevice;
     JPanel panel;
+    Date date = new Date();
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss z");
 
+    //更改的IP
     String strIP;
+    //更改的端口
+    int defaultSendPort=5418,defaultRevicePort = 2333;
+
     //声明发信端口和接收端口
     int strSendPort,strRevicePort;
 
@@ -154,9 +163,14 @@ public class LANTalkClientWindowGUI extends JFrame implements ActionListener,Run
             //获取文本数据
             byte[] info = txt.getText().trim().getBytes();
             try{
-                InetAddress inetAddress = InetAddress.getByName(InetAddress.getLocalHost().getHostAddress());
+                String HostIp = InetAddress.getLocalHost().getHostAddress();
+                if (strIP != null)
+                    HostIp = strIP;
+                InetAddress inetAddress = InetAddress.getByName(HostIp);
+                if (strRevicePort != 0)
+                    defaultRevicePort = strRevicePort;
                 //创建待发送的数据包
-                DatagramPacket datagramPacket = new DatagramPacket(info,info.length,inetAddress,5418);
+                DatagramPacket datagramPacket = new DatagramPacket(info,info.length,inetAddress,defaultSendPort);
                 DatagramSocket socket = new DatagramSocket();
                 //发送数据包
                 socket.send(datagramPacket);
@@ -170,6 +184,9 @@ public class LANTalkClientWindowGUI extends JFrame implements ActionListener,Run
             catch (IOException e1){
                 JOptionPane.showMessageDialog(this,"消息发送失败","错误",JOptionPane.ERROR_MESSAGE);
             }
+            //显示本地消息
+            text.append("时间:"+simpleDateFormat.format(date)+"\n");
+            text.append("本机:"+txt.getText()+"\n");
             //清除文本框
             txt.setText(null);
         }
@@ -210,9 +227,11 @@ public class LANTalkClientWindowGUI extends JFrame implements ActionListener,Run
         //最大长度
         byte data[] = new byte[8192];
         try{
+            if (strRevicePort != 0)
+                defaultRevicePort = strRevicePort;
             //创建接收的数据包
             packet = new DatagramPacket(data,data.length);
-            socket = new DatagramSocket(2333);
+            socket = new DatagramSocket(defaultRevicePort);
         }
         catch (SocketException e){
             JOptionPane.showMessageDialog(this,"端口不合法","错误",JOptionPane.ERROR_MESSAGE);
@@ -226,7 +245,8 @@ public class LANTalkClientWindowGUI extends JFrame implements ActionListener,Run
                     //接收数据包
                     socket.receive(packet);
                     String message = new String(packet.getData(),0,packet.getLength());
-                    text.append("\n"+message+"\n");
+                    text.append("时间:"+simpleDateFormat.format(date)+"\n");
+                    text.append("对方:"+message+"\n");
                 }
                 catch (IOException e1){
                     JOptionPane.showMessageDialog(this,"接收信息失败","错误",JOptionPane.ERROR_MESSAGE);

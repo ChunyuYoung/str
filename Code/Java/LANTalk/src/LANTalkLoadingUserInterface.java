@@ -22,7 +22,7 @@ public class LANTalkLoadingUserInterface extends JFrame implements Runnable{
         setResizable(false);
 
         //初始化控件对象参数
-        backImage = new ImageIcon("LANTalkLoading.gif");
+        backImage = new ImageIcon("LANTalkLoading_.gif");
         back = new JLabel(backImage);
 
         //初始化面板
@@ -39,8 +39,8 @@ public class LANTalkLoadingUserInterface extends JFrame implements Runnable{
     //如果把sleep放在构造函数会导致窗体界面的Lable的背景图无法加载
     public void run(){
         int n= 0;
-        //动态图长度23秒
-        while(n<23){
+        //动态图长度10秒
+        while(n<10){
             n++;
             try{
                 sleep(1000);
@@ -48,10 +48,10 @@ public class LANTalkLoadingUserInterface extends JFrame implements Runnable{
             catch (InterruptedException e){
                 e.printStackTrace();
             }
-            if ((n*5) > 100){
+            if ((n*10) > 100){
                 n = 100;
             }
-            setTitle("正在加载:"+n*5+"%");
+            setTitle("正在加载:"+n*10+"%");
         }
 
         //如果这里匿名实例化对象,就不能刷新被调用窗口的布局,就会导致界面可能出现什么都没有
