@@ -412,3 +412,53 @@ adb devices
 * 如果选中Workspace没有找到编码**Text file encoding**则选中当前工程在操作
 * 显示所有中文的编码方式主要是GBK和UTF-8,UTF-8是国际通用的中文编码标准
 ***
+## 在DiskGenius中建立新分区时报错
+* 错误详情:
+	1. $Bitmap中有标记为已使用的未用簇
+	2. $MFT位图中有标记为已使用的魏永文件记录
+* 解决方法:
+	1. 以管理员身份运行cmd.exe
+	2. 输入指令
+		> 解释:其中f:是要修复的盘符,请根据您的当前环境更改
+</br>
+		> ```chkdsk /f /x f:```
+***
+## Diskgenius 新建并格式化分区时报错
+* 当删掉一个分区时,重新建立分区并开始格式化分区时提示:无法保存分区
+* 解决方法:此电脑(我的电脑/计算机)-->管理(鼠标右键)-->磁盘管理-->选择你要新建分区的空闲分区-->新建简单卷(硬盘)/格式化(移动磁盘/SD卡)
+***
+## Deepin Linux 15.9 因自带驱动导致无法进入
+* 引导界面,按e修改配置文件
+``` text
+linux    /boot/vmlinuz-4.10.0-28-generic.efi.signed root=UUID=f1f30085-ee70-4367-befc-7b5f48cbcf5b ro splash quiet nouveau.modeset=0
+```
+* 开机进入界面后修改`/boot/grub/grub.cfg`文件进行永久修改
+***
+## 在 Deepin Linux 下修改 Hosts 文件
+* 查看Hosts文件是否允许读写
+``` text
+ls -all /etc/hosts
+```
+* 如果当前用户没有权限,则提权并修改文件写入权限
+``` text
+sudo chmod 700 /etc/hosts
+```
+* 验证权限是否修改成功
+``` text
+ls -all /etc/hosts
+```
+* 使用Vim编辑Hosts文件
+``` text
+sudo vim /etc/hosts
+```
+* 进入插入模式,输入i
+* 在最后一行添加地址
+``` text
+0.0.0.0 account.jetbrains.com
+```
+* 按下 **Esc** 输入 **:wq** 
+* 验证地址是否成功写入
+``` text
+sudo cat /etc/hosts
+```
+***

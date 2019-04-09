@@ -1,4 +1,8 @@
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class QuickProgramLanucherMain {
@@ -16,7 +20,7 @@ public class QuickProgramLanucherMain {
         System.out.println("|                                                          |");
         System.out.println("| 作者:StringOD 欢迎使用快速程序启动器(QuickProgramLanucher). |");
         System.out.println("|        GitHub:https://github.com/TianruiShi/str          |");
-        System.out.println("|       By StringOD welcome to QuickProgramLanucher.       |");
+        System.out.println("|       By Stri2ngOD welcome to QuickProgramLanucher.       |");
         System.out.println("+----------------------------------------------------------+");
 
         System.out.println("1. 显示默认已添加路径        2. 启动默认程序       3.退出程序");

@@ -11,5 +11,6 @@ public class LANTalkMain {
 //        //调试:直接加载服务器端
 //        LANTalkServerWindowGUI server = new LANTalkServerWindowGUI();
 //        server.validate();     //刷新实例化对象的布局
+
     }
 }
