@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TesetOne</string>
+    <string name="button_1">点我啊</string>
+    <string name="add_item">添加</string>
+    <string name="remove_item">移除</string>
+    <string name="button_2">不要鸭不要点我鸭</string>
+    <string name="button_3">やめて</string>
+    <string name="button_4">启动第二个活动</string>
+    <string name="button_5">启动第三个活动</string>
+    <string name="button_6">网页</string>
+    <string name="button_7">拨号</string>
+</resources>
