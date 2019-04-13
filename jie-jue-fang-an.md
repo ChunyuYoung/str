@@ -423,10 +423,12 @@ adb devices
 </br>
 		> ```chkdsk /f /x f:```
 ***
+
 ## Diskgenius 新建并格式化分区时报错
 * 当删掉一个分区时,重新建立分区并开始格式化分区时提示:无法保存分区
 * 解决方法:此电脑(我的电脑/计算机)-->管理(鼠标右键)-->磁盘管理-->选择你要新建分区的空闲分区-->新建简单卷(硬盘)/格式化(移动磁盘/SD卡)
 ***
+
 ## Deepin Linux 15.9 因自带驱动导致无法进入
 * 引导界面,按e修改配置文件
 ``` text
@@ -434,6 +436,7 @@ linux    /boot/vmlinuz-4.10.0-28-generic.efi.signed root=UUID=f1f30085-ee70-4367
 ```
 * 开机进入界面后修改`/boot/grub/grub.cfg`文件进行永久修改
 ***
+
 ## 在 Deepin Linux 下修改 Hosts 文件
 * 查看Hosts文件是否允许读写
 ``` text
