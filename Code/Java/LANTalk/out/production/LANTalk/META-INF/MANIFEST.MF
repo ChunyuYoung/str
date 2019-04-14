@@ -1,8 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: LANTalkMain
-Class-Path: common-image-3.3.2.jar
- common-io-3.3.2.jar
- common-lang-3.3.2.jar
- commons-io-2.6.jar
- commons-net-3.6.jar
- constraint-layout.jar
+Main-Class: out.production.LANTalk.LANTalkMain

@@ -1,6 +1,7 @@
 import java.io.Console;
 import java.io.File;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.nio.file.Paths;
 import java.util.Date;
 import java.util.Scanner;
@@ -113,6 +114,40 @@ public class Main {
         catch (IOException e) {
             System.out.printf("找不到文件");
         }
+
+        //带标签的break
+        him:
+        for (int i = 0; i < 5; i++)
+            if(true)
+                break him;
+        System.out.printf("带标签的break\n");
+
+        //大数值
+        //BigInteger
+        BigInteger a = BigInteger.valueOf(5);
+        BigInteger b = BigInteger.valueOf(10);
+        System.out.printf("大数值:BigInteger\na = %d\nb = %d\n",a,b);
+        System.out.printf("大数值:a+b=%d\n",a.add(b));
+        System.out.printf("大数值:b-a=%d\n",b.subtract(a));
+        System.out.printf("大数值:a*b=%d\n",a.multiply(b));
+        System.out.printf("大数值:b/a=%d\n",b.divide(a));
+        BigInteger a1 = BigInteger.valueOf(10);
+        BigInteger b1 = BigInteger.valueOf(10);
+        /*
+        System.out.printf("大数值:a1%b1%d\n",a1.mod(b1));
+        这样写会报错,根据提示可能是%d格式控制符导致的
+         */
+        System.out.println("大数值:a1%b1=" + a1.mod(b1));
+        System.out.println("大数值:a1 比较 b1 = " + a1.compareTo(b1) + "返回0表示相等,负数表示一个大数值比另一个大数值小,否则返回正数");
+
+        //for each 循环
+        System.out.println("使用for each遍历数组列表:");
+        int[] aArray = {1,2,3,4,5};
+        for (int a2:aArray)
+            //如果直接写aArray[a2]会抛异常:数组越界,可能是因为a2在第五个元素时已经越界,所以这里减去1,还能把第一个元素打印出来
+            System.out.println(aArray[a2-1]);
+
+
     }
 }
 
