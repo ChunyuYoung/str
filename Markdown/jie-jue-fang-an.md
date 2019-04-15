@@ -465,3 +465,92 @@ sudo vim /etc/hosts
 sudo cat /etc/hosts
 ```
 ***
+
+## Windows Cmd: jar不是内部或外部命令
+* 因为环境变量没有配置完整
+* 原始配置环境变量
+``` text
+CLASSPATH
+ .;%JAVA_HOME%\lib;%JAVA_HOME%\lib\tools.jar;
+
+JAVA_HOME
+ %JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;
+
+Path
+..\jdk-x.x.x
+..\jre-x.x.x
+```
+* 可以看到`CLASSPATH`中第一个*;*之前`\lib`之后没有配置`jar.exe`运行环境
+* 修正后的环境变量:
+``` text
+JAVA_HOME    
+d:\Program Files\Java\jdkx.x.x_xx
+
+CLASS_PATH  
+.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
+
+Path        
+%JAVA_HOME%\bin;
+```
+* 可以看到`CLASS_PATH`第一个*;*之前多了一个`dt.jar`,主要就是这里的问题
+***
+
+## JavaEE 打包.jar文件
+* 首先要注重说明的是本地电脑如果有多个Java运行环境的版本,建议删掉多余的,保留一个常用版本.
+### 打包时的目录结构
+* 打包不是直接从编译工程目录下直接打包,那样应该是不行的,我为了不出错,全部提出来(用到的).
+* 示例结构:
+``` text
+C:\USERS\HIWIN10\DESKTOP\LANTALK
+│  ConfigurationInformation.txt
+│  DemoLANTalk.gif
+│  imageFace.jpg
+│  Java小白制作局域网聊天程序LANTalk.md
+│  LANTalk.eml
+│  LANTalk.iml
+│  LANTalk.userlibraries
+│  LANTalkLoading.gif
+│  LANTalkLoadingUserInterface.gif
+│  LANTalkLoading_.gif
+│  MANIFEST.MF
+│  后序.png
+│  我的人生导演.png
+│
+└─src
+        LANTalkClientWindowGUI.class
+        LANTalkGetLocalHost.class
+        LANTalkLoadingUserInterface.class
+        LANTalkLoginWindowGUI.class
+        LANTalkMain.class
+        LANTalkRegisterWindowGUI.class
+        LANTalkServerWindowGUI.class
+        LANTalkUserInterface.class
+```
+1. 首先创建你的工程名称目录,比如这里第一行的`LANTalk`
+2. 然后在`\LANTalk\<目录名>`这个目录放*字节码文件*`.class`
+3. 然后`\LANTalk`这个目录下放`MANIFEST.MF`文件和一些资源文件
+***
+### MANIFEST.MF 文件编写格式
+* 示例:
+``` text
+Manifest-Version: 1.0
+Main-Class: LANTalkMain
+Created-By: 1.10.0_2
+
+```
+* 第一行是当前项目版本号
+* 第二行是主类入口
+* 第三行是当前运行环境的版本`java -version`查看版本
+* 最后一行留空,*在这里*总共是四行,最后一个空行不能删
+* *:*后面需要有一个**空格**
+* 第三行还能这样写`Created-By: 1.10.0_2 (Orcale Corporation)`
+* 如果主类嵌套在一个以上的目录下需要在`MANIFEST.MF`文件修改`Main-Class: XXX.XX.LANTalk`
+* [详情参见](https://www.jb51.net/article/131101.htm)
+***
+### Windows Cmd 下打包.jar文件
+1. `jar cvfm LANTalk.jar MANIFEST.MF -C src/ .`
+	* `LANTalk.jar`是你要打包成*.jar*文件的名称
+	* `MANIFEST.MF`是要添加的*清单*文件
+	* `src/ .`这个*src*是存放`.class`字节码的目录
+2. `java -jar LANTalk.jar`
+	* 运行测试是否成功打包

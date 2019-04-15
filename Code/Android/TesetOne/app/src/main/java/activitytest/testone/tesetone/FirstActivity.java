@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,6 +57,45 @@ public class FirstActivity extends AppCompatActivity {
 //                startActivity(intent);
             }
         });
+
+        //向下一个活动发送数据
+        Button button4 = (Button) findViewById(R.id.button_8);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String data = "Hello SecondActivity";
+                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+                //第一个data表示键,第二个参数表示要传递的数据
+                intent.putExtra("data",data);
+                startActivity(intent);
+            }
+        });
+
+        //返回数据给上一个活动
+        Button button5 = (Button) findViewById(R.id.button_10);
+        button5.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+                //数字1是请求码,唯一的
+                startActivityForResult(intent,1);
+            }
+        });
+
+    }
+
+    //得到返回数据
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        switch (requestCode){
+            case 1:
+                if (resultCode == RESULT_OK){
+                    String returnedData = data.getStringExtra("data_return");
+                    Log.d("FirstActivity",returnedData);
+                }
+                break;
+            default:
+                break;
+
+        }
     }
 
     //添加菜单

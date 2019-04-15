@@ -9,4 +9,8 @@
     <string name="button_5">启动第三个活动</string>
     <string name="button_6">网页</string>
     <string name="button_7">拨号</string>
+    <string name="button_8">向下一个活动传递数据</string>
+    <string name="button_9">接收上一个活动的数据</string>
+    <string name="button_10">返回数据给上一个活动</string>
+    <string name="button_11">返回数据</string>
 </resources>

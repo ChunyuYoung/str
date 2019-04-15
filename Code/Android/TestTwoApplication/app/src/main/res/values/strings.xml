@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TestTwoApplication</string>
+    <string name="button1">Toast弹窗</string>
+    <string name="button2">B站</string>
+    <string name="button3">拨号</string>
+    <string name="button4">退出</string>
+    <string name="button5">百度</string>
+    <string name="menu_item_add">Add</string>
+    <string name="menu_item_remove">Remove</string>
+    <string name="menu_item_StringOD">StringOD</string>
+    <string name="button6">异世界</string>
+    <string name="menu_item_world_SunBoyDream">阳光下没有梦想的少年</string>
+    <string name="menu_item_world_StringOD">StringOD</string>
+    <string name="menu_item_world_str233">STR233</string>
+
+</resources>
