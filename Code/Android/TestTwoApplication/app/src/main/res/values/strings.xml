@@ -12,5 +12,10 @@
     <string name="menu_item_world_SunBoyDream">阳光下没有梦想的少年</string>
     <string name="menu_item_world_StringOD">StringOD</string>
     <string name="menu_item_world_str233">STR233</string>
+    <string name="button_world_1">心里话:1</string>
+    <string name="button_world_2">心里话:2</string>
+    <string name="button_world_3">心里话:3</string>
+    <string name="button_world_4">心里话:4</string>
+    <string name="button_world_5">心里话:5</string>
 
 </resources>

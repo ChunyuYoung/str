@@ -30,7 +30,7 @@ public class GameMain {
 		case 1:						//1.勇者之路精灵物语速升版
 			try {
 				Desktop des = Desktop.getDesktop();
-				File f = new File("勇者之路精灵物语速升版.html");
+				File f = new File("res\\勇者之路精灵物语速升版.html");
 				des.open(f);
 				System.out.println("启动成功");
 			}
@@ -42,7 +42,7 @@ public class GameMain {
 		case 2:								//2:黄金矿工双人版
 			try {
 				Desktop des = Desktop.getDesktop();
-				File f = new File("黄金矿工双人版.html");
+				File f = new File("res\\黄金矿工双人版.html");
 				des.open(f);
 				System.out.println("启动成功");
 			}
@@ -54,7 +54,7 @@ public class GameMain {
 		case 3: 							//3:疯狂小人战斗
 			try {
 				Desktop des = Desktop.getDesktop();
-				File f = new File("疯狂小人战斗.html");
+				File f = new File("res\\疯狂小人战斗.html");
 				des.open(f);
 				System.out.println("启动成功");
 			}
@@ -66,7 +66,7 @@ public class GameMain {
 		case 4: 							//4:高楼爆破
 			try {
 				Desktop des = Desktop.getDesktop();
-				File f = new File("高楼爆破2.html");
+				File f = new File("res\\高楼爆破2.html");
 				des.open(f);
 				System.out.println("启动成功");
 			}
@@ -78,7 +78,7 @@ public class GameMain {
 		case 5:								//5:双刃战士
 			try {
 				Desktop des = Desktop.getDesktop();
-				File f = new File("双刃战士.html");
+				File f = new File("res\\双刃战士.html");
 				des.open(f);
 				System.out.println("启动成功");
 			}

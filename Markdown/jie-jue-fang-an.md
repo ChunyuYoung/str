@@ -554,3 +554,10 @@ Created-By: 1.10.0_2
 	* `src/ .`这个*src*是存放`.class`字节码的目录
 2. `java -jar LANTalk.jar`
 	* 运行测试是否成功打包
+***
+
+### Windows Cmd 运行.JAR文件抛异常: java.lang.IllegalArgumentException
+* 找不到资源文件会抛出这个异常
+* 比如:资源文件在工程的根目录下,在打包的时候可能会调用不到
+* 解决方法:把资源全部释放到`.jar`文件的所在目录下
+***

@@ -4,4 +4,33 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/button_world_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_world_1"/>
+
+    <Button
+        android:id="@+id/button_world_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_world_2"/>
+
+    <Button
+        android:id="@+id/button_world_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_world_3"/>
+
+    <Button
+        android:id="@+id/button_world_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_world_4"/>
+
+    <Button
+        android:id="@+id/button_world_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_world_5"/>
 </LinearLayout>
