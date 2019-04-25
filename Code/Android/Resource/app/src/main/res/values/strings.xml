@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Resource</string>
+    <string name="MainImageBackPicture">MainImage</string>
+    <string name="ModelsImageBackPicture">ModelsImage</string>
+    <string name="LoginTextView">Login:</string>
+    <string name="PassTextView">Pass:</string>
+    <string name="LoginButton">Login</string>
+    <string name="RegisterButton">Register</string>
+</resources>

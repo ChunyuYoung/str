@@ -561,3 +561,21 @@ Created-By: 1.10.0_2
 * 比如:资源文件在工程的根目录下,在打包的时候可能会调用不到
 * 解决方法:把资源全部释放到`.jar`文件的所在目录下
 ***
+
+### Android Studio 日志代码补全调试没有输出
+* 在AS中输入`logd`然后*table*补全
+``` Java
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart: ");
+    }
+```
+* 直接补全出来是无法再调试中看到(也有可能是我操作不对)
+* 解决问题的写法是去掉冒号**:**
+``` Java
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "onStart");
+    }
+```
+***
