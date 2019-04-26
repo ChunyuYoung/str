@@ -579,3 +579,14 @@ Created-By: 1.10.0_2
     }
 ```
 ***
+
+### Android onSaveInstenceState
+* `onSaveInstenceState`方法的执行条件
+> DataPreservationRecovery项目
+1. `MainActivity`启动后打开`NormalActivity`时会执行`onSaveInstanceState`方法存储被 *停止* 的`MainActivity`的数据(tempData)
+2. 当`NormalActivity`返回到`MainActivity`时`savedInstanceState`方法没有接收到`onSaveInstanceState`返回的数据(tempData)
+3. 当`DialogActivity`启动时并不完全占用整块屏幕,因此`MainActivity`并没有 *停止* 只是被 *暂停* 且`onSaveInstanceState`没有执行.
+4. 当`DialogActivity`返回到`MainActivity`时`savedInstanceState`方法依然没有接收到`onSaveInstanceState`返回的数据(tempData)
+5. 当按下 *Home* 键使`MainActivity`不在占用整块屏幕时会执行`onSaveInstanceState`方法存储被暂停的`MainActivity`的数据(tempData),当输出被存储时`MainActivity`才会被 *停止*
+6. 当屏幕方向被改变时( *竖屏* 切换到 *横屏* )导致`MainActivity`被销毁之前再次执行`onSaveInstanceState`方法,当屏幕停止改变方向时,程序重新创建`MainActivity`并执行`savedInstanceState`方法恢复在被系统回收之前的数据(屏幕更改之前),因为屏幕更改导致布局被更改.
+***
