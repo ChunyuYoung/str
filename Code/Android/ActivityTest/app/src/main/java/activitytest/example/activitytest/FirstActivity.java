@@ -3,6 +3,7 @@ package activitytest.example.activitytest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +17,7 @@ public class FirstActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
+        Log.d("FirstActivity",this.toString());
 
         Button button1 = (Button)findViewById(R.id.button_1);
         button1.setOnClickListener(new View.OnClickListener(){
@@ -23,8 +25,10 @@ public class FirstActivity extends AppCompatActivity {
                 //参数:context就是Toast要请求的上下文
                 //第二个参数是toast要显示的文本
                 //第三个参数是Toast显示的时间长度,short和long就是显示的时间长短
-                Toast.makeText(FirstActivity.this,"你点击了Button 1",Toast.LENGTH_SHORT).show();    //必须加show不然不显示
-                finish();   //销毁当前活动
+//                Toast.makeText(FirstActivity.this,"你点击了Button 1",Toast.LENGTH_SHORT).show();    //必须加show不然不显示
+//                finish();   //销毁当前活动
+                Intent intent = new Intent(FirstActivity.this,second_layout.class);
+                startActivity(intent);
             }
         });
         Button button2 = (Button)findViewById(R.id.Button_start);

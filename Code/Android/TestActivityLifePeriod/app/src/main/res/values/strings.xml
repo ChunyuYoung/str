@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestActivityLifePeriod</string>
+    <string name="ButtonNormalActivity">NormalActivity</string>
+    <string name="ButtonDialogActivity">DialogActivity</string>
+    <string name="TextViewNormalActivity">This is a normal activity</string>
+    <string name="TextViewDialogActivity">This is a dialog activity</string>
+</resources>

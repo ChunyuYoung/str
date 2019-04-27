@@ -1,5 +1,6 @@
 package activitytest.example.activitytest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,9 @@ public class second_layout extends AppCompatActivity {
         Button button = (Button)findViewById(R.id.button_2);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                Toast.makeText(second_layout.this,"你点击了第二个Activity:second_layout",Toast.LENGTH_LONG).show();
+//                Toast.makeText(second_layout.this,"你点击了第二个Activity:second_layout",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(second_layout.this,FirstActivity.class);
+                startActivity(intent);
             }
         });
     }
