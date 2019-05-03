@@ -590,3 +590,22 @@ Created-By: 1.10.0_2
 5. 当按下 *Home* 键使`MainActivity`不在占用整块屏幕时会执行`onSaveInstanceState`方法存储被暂停的`MainActivity`的数据(tempData),当输出被存储时`MainActivity`才会被 *停止*
 6. 当屏幕方向被改变时( *竖屏* 切换到 *横屏* )导致`MainActivity`被销毁之前再次执行`onSaveInstanceState`方法,当屏幕停止改变方向时,程序重新创建`MainActivity`并执行`savedInstanceState`方法恢复在被系统回收之前的数据(屏幕更改之前),因为屏幕更改导致布局被更改.
 ***
+
+### 使用百度URL搜索资源
+#### 前言
+我的浏览器默认的搜索引擎是 [萌娘百科](https://zh.moegirl.org) .<br/>
+所以如果想搜索一些 *其他资源* 就无法用这个搜索引擎检索到(毕竟这是 **特殊需求专用** 的).<br/>
+我经常都是打开浏览器然后 **Ctrl+T** 然后输入 `https://www.baidu.com/` 的主页地址,然后搜相应的信息,很 **麻烦**.<br/>
+***
+#### 解决方法
+为了解决上面的问题,我思考着能不能直接在 **URL** 的基础上做修改呢!<br/>
+在地址栏后面加入固定的 *操作符* (这么可能说不专业,但这样写就没问题)<br/>
+``` text
+例如:百度的主页
+https://www.baidu.com/
+
+例如搜索关键字:chrome
+https://www.baidu.com/s?wd=chrome
+
+```
+***

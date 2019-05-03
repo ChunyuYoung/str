@@ -1,0 +1,2 @@
+1. 编译text.asm文件,输入:ml /c /coff text.asm(如果代码有错误的话会提示错误的)
+2. 连接成可执行文件,输入:link /subsystem:windows text.obj(连接成功的话会在该目录下生成一个text.exe的可执行文件)
