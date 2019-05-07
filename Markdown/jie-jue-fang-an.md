@@ -609,3 +609,19 @@ https://www.baidu.com/s?wd=chrome
 
 ```
 ***
+
+### Windows10 Cmd 连接Wifi网络
+1. 导出已连接Wifi配置文件
+``` text
+netsh wlan export profile key=clear
+```
+2. 显示所有导出的配置文件
+``` text
+netsh wlan show profile
+```
+3. 连接Wifi网络
+``` text
+netsh wlan connect="StringOD"
+```
+[引用](https://www.jianshu.com/p/50f5e1fa11b3)</br>
+***
