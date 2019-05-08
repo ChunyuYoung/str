@@ -612,16 +612,116 @@ https://www.baidu.com/s?wd=chrome
 
 ### Windows10 Cmd 连接Wifi网络
 1. 导出已连接Wifi配置文件
-``` text
+```text
 netsh wlan export profile key=clear
 ```
 2. 显示所有导出的配置文件
-``` text
+```text
 netsh wlan show profile
 ```
 3. 连接Wifi网络
-``` text
+```text
 netsh wlan connect="StringOD"
 ```
 [引用](https://www.jianshu.com/p/50f5e1fa11b3)</br>
+***
+
+### Windows10 Install MySQL
+1. [安装MySQL_5.7.13](https://downloads.mysql.com/archives/community/)
+2. [参考菜鸟教程](https://www.runoob.com/mysql/mysql-install.html)
+3. 在解压后的MySQL目录下创建配置文件`my.ini`,这段代码需要设置自己的MySQL文件根路径
+```text
+[mysql]
+# 设置mysql客户端默认字符集
+default-character-set=utf8
+[mysqld]
+# 设置3306端口
+port = 3306
+# 设置mysql的安装目录
+basedir=D:\\MySql\\mysql-5.7.13-winx64
+# 设置 mysql数据库的数据的存放目录，MySQL 8+ 不需要以下配置，系统自己生成即可，否则有可能报错
+# datadir=C:\\web\\sqldata
+# 允许最大连接数
+max_connections=20
+# 服务端使用的字符集默认为8比特编码的latin1字符集
+character-set-server=utf8
+# 创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB
+```
+4. 切换到MySQL的`bin`目录下(以管理员身份运行终端)
+``` text
+cd D:\MySql\mysql-5.7.13-winx64\bin
+```
+5. 初始化数据库
+```text
+mysqld --initialize --console
+```
+**执行完成后,会输出root用户的初始默认密码**</br>
+```text
+D:\MySql\mysql-5.7.13-winx64\bin> 2018-04-20T02:35:05.464644Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: 9+fbBKWk+Lqf
+```
+6. 配置MySQL环境变量:鼠标右键-->此电脑/我的电脑/计算机-->属性-->高级系统设置-->环境变量-->系统变量-->path-->添加/追加/新建(MySQL的Bin目录)
+7. 启动MySQL
+```text
+net start mysql
+```
+
+#### 启动MySQL服务提示找不到文件指定的文件
+
+```text
+D:\MySql\mysql-5.7.13-winx64\bin>net start mysql
+发生系统错误 2。
+
+系统找不到指定的文件
+```
+* 解决方法:
+卸载mysqld服务</br>
+```text
+D:\MySql\mysql-5.7.13-winx64\bin>mysqld --remove
+Service successfully removed.
+```
+安装mysqld服务</br>
+```text
+D:\MySql\mysql-5.7.13-winx64\bin>mysqld --install
+Service successfully installed.
+```
+启动mysql服务</br>
+```text
+D:\MySql\mysql-5.7.13-winx64\bin>net start mysql
+MySQL 服务正在启动 .
+MySQL 服务已经启动成功。
+```
+[引用参考](https://blog.csdn.net/digitalmon/article/details/78152187)
+
+#### 其他问题/解决方案
+1. 未解决的问题: 下载最新版的`MySQL8.0.1.msi`安装程序配置完,会出现MySQL服务无法启动,但MySQL80服务可以启动
+```text
+2019/5/6 星期一 下午 21:54:24
+【管理员】萝莉为何穿短裙 2019/5/6 星期一 下午 21:54:24
+问一下:
+我装了MySQL8.0
+然后我要启动MySQL服务,我以管理员身份启动服务,但提示我
+C:\Windows\system32>net start mysql
+MySQL 服务正在启动 ...
+MySQL 服务无法启动.
+服务没有报告任何错误.
+请键入 NET HELPMSG 3534 已获得更多的帮助
+然后大部分百度的都让我修改配置文件:根据我搜索的结果修改配置文件分为两种:
+	1. 是.msi安装包安装后MySQL目录下修改my-default.ini配置文件,但我找遍了整个目录都没有这个文件.
+	2. 是.zip解压缩文件解压出来在data目录下修改配置文件,但我的是.msi安装程序安装的文件,而且我在data目录也找了没有这个文件.
+	   根据部分回答是因为没有权限,根据我的尝试,报错分两种情况:
+	1. 普通模式运行cmd启动mysql提示错误代码5,拒绝访问
+	2. 以管理员身份运行会提示MySQL服务无法启动,如上图.
+	   百度上的情况和我不同.
+	   唯一相似的答案是MySQL80服务无法启动,他们这个要删除data目录.
+	   而我的是MySQL服务无法启动,我不知道他们这个方法在我这里适用否?!
+以上
+有木有大兄哥遇到过?
+```
+
+2. 下载的`MySQL5.7.13.zip`解压缩后根目录下会有一个`my-default.ini`这个配置文件需要删掉或者压缩备份,</br>
+然后在创建`my.ini`文件
+```text
+notepad D:\MySql\mysql-5.7.13-winx64\my.ini
+```
 ***

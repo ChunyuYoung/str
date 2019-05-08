@@ -33,5 +33,3 @@ for select in name_list:
         break
 else:
     print("没有找到-->4<--")
-
-# 202
